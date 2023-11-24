@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+$background: #feffe4;
+$nav-bg: #ffffe7;
+$dark-gray: #4e4b4b;
+$steak-rare: #fc0532;
+$steak-dark-red: #a60321;
+
+:root {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+* ::after,
+::before {
+  box-sizing: inherit;
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  background-color: $background;
+}
