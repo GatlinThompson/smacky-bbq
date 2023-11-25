@@ -1,12 +1,34 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
-
+//Variables
+$white: #ffffff;
 $background: #feffe4;
 $nav-bg: #ffffe7;
 $dark-gray: #4e4b4b;
 $steak-rare: #fc0532;
 $steak-dark-red: #a60321;
+$dark-blue: #335461;
+$mustard: #fcc605;
+
+//BootStrap Carousel
+$carousel-indicator-width: 0.75em;
+$carousel-indicator-height: 0.75em;
+$carousel-indicator-hit-area-height: 1;
+$carousel-indicator-spacer: 0.31em;
+$carousel-indicator-opacity: 1;
+$carousel-indicator-active-opacity: 1;
+$carousel-indicator-transition: opacity 0.6s ease-in-out;
+
+$carousel-control-prev-icon-bg: url("../assets/prev_arrow.png");
+$carousel-control-next-icon-bg: url("../assets/next_arrow.png");
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1078px,
+  xxl: 1078px,
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 :root {
   box-sizing: border-box;
@@ -21,4 +43,104 @@ $steak-dark-red: #a60321;
 
 body {
   background-color: $background;
+}
+
+//Carousel Styling
+//Indicator Styling
+div.carousel.slide > div.carousel-indicators {
+  z-index: 3;
+  & > button {
+    box-sizing: border-box;
+    border: 2px solid $white;
+    border-radius: 100%;
+    background-color: transparent;
+    margin-bottom: -0.5rem;
+
+    @include media-breakpoint-up(xl) {
+      height: 1.3rem;
+      width: 1.3rem;
+      margin-left: 10px;
+      margin-right: 10px;
+      border-width: 3px;
+      margin-bottom: 1rem;
+    }
+
+    &.active {
+      background-color: rgba($color: $white, $alpha: 0.66);
+    }
+  }
+}
+
+div.carousel-caption {
+  padding-bottom: 0.5rem;
+  @include media-breakpoint-up(xxl) {
+    padding-bottom: 1.25rem;
+  }
+}
+
+//Carousel Control Styling
+a.carousel-control-next,
+a.carousel-control-prev {
+  width: 5%;
+  margin: auto 0.5rem;
+  z-index: 3;
+
+  @include media-breakpoint-up(lg) {
+    width: 10%;
+  }
+
+  @include media-breakpoint-up(xl) {
+    width: 10%;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    width: 20%;
+  }
+
+  @media all and (min-width: 1441px) {
+    width: 30%;
+  }
+}
+
+//Carousel Item Styling
+div.carousel-item {
+  position: relative;
+  transition: all 0.6s ease;
+  left: 50%;
+  opacity: 0;
+  transform: translateX(-50%);
+  @include media-breakpoint-up(lgl) {
+    max-width: 878px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    max-width: 1078px;
+  }
+  @include media-breakpoint-up(xxl) {
+    max-width: 1078px;
+  }
+  &.active {
+    transition: all 0.6s ease;
+    opacity: 1;
+  }
+
+  &.active.carousel-item-start,
+  &.active.carousel-item-end {
+    opacity: 0;
+  }
+
+  &.carousel-item-end,
+  &.carousel-item-start {
+    opacity: 1;
+  }
+
+  &:not(.active) {
+    z-index: 2;
+  }
+}
+
+//Font Styling
+
+.header {
+  font-family: "Angkor", serif;
 }

@@ -1,0 +1,32 @@
+@use "../styles/custom.scss" as *;
+
+.button {
+  text-align: center;
+  background-color: $steak-dark-red;
+  transition: all 100ms ease-in-out;
+  color: $white;
+  border-radius: 1px;
+  padding: auto 1.5rem;
+  border: none;
+
+  &:hover {
+    background-color: darken($color: $steak-dark-red, $amount: 10%);
+  }
+  & > a {
+    color: $white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 0.8rem;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.jumbotron-button {
+  margin-bottom: 0rem;
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 1.7rem;
+  }
+}

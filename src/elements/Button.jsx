@@ -1,15 +1,15 @@
 import { NavLink } from "react-router-dom";
 
-const FancyButton = (props) => {
+const Button = (props) => {
   const style = {
     padding: props.padding,
     margin: props.margin,
   };
   return (
-    <button className={`fancy-button ${props.addClass}`} style={style}>
+    <button className={`button ${props.addedClass}`} style={style}>
       <NavLink to={`${props.location}`}>{props.title}</NavLink>
     </button>
   );
 };
 
-export default FancyButton;
+export default Button;

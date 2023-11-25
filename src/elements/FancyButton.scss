@@ -8,7 +8,7 @@
   transition: all 100ms ease-in-out;
   width: 100%;
   padding: 12rem auto;
-  border-radius: 1px;
+  border-radius: 0.25rem;
 
   &:hover {
     scale: 1.03;
@@ -28,5 +28,29 @@
     font-size: 2rem;
     color: $steak-rare;
     padding: 12rem auto;
+  }
+
+  //Navbar Button Styling
+  &.navbtn {
+    max-width: 200px;
+  }
+  //Home Order Now Button Styling
+  &.home-order-now-btn {
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+    width: auto;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 1.1rem;
+    }
+    & > a {
+      padding: 0.5rem 3rem;
+      font-size: 2.5rem;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 4rem;
+        padding: 1.5rem 2.5rem;
+      }
+    }
   }
 }

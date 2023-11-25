@@ -16,5 +16,8 @@ body {
 }
 
 main {
-  padding-top: 6.35rem;
+  padding-top: 5.45rem;
+  @include media-breakpoint-up(xl) {
+    padding-top: 6.35rem;
+  }
 }

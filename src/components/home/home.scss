@@ -1,0 +1,170 @@
+@use "../../styles/custom.scss" as *;
+
+//Phone Positioning
+#phone-app {
+  margin-top: 4rem;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 5.56rem;
+  }
+}
+
+//Phone Section Styling
+.phone {
+  background-color: $dark-blue;
+  padding-bottom: 4.8rem;
+
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 11.83rem;
+  }
+
+  //Phone Body Positons
+  &-body {
+    padding-top: 2.1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    margin-top: 0;
+    @include media-breakpoint-up(lg) {
+      padding-top: 0rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto 1fr;
+    }
+    @include media-breakpoint-up(lg) {
+      padding-top: 0rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 0.5fr 1fr 1fr 0.5fr;
+    }
+  }
+
+  //Phone Title Position
+  &-header {
+    padding-top: 1.75rem;
+    text-align: center;
+    margin-right: 1.2rem;
+    margin-bottom: 2rem;
+    grid-column: 1 / 3;
+    grid-row: 1 / 1;
+    @include media-breakpoint-up(lg) {
+      padding-top: 0rem;
+      grid-column: 1 / 4;
+    }
+
+    @include media-breakpoint-up(xl) {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+    }
+
+    h2:nth-child(1) {
+      width: 100%;
+      font-size: 2rem;
+      padding-right: 1.2rem;
+      color: $mustard;
+      @include media-breakpoint-up(lg) {
+        font-size: 4rem;
+      }
+    }
+    h2:nth-child(2) {
+      color: $steak-rare;
+      width: 100%;
+      font-size: 1.5rem;
+      padding-left: 4.8rem;
+      @include media-breakpoint-up(lg) {
+        font-size: 3rem;
+        padding-left: 6rem;
+      }
+    }
+  }
+
+  //Phone App Positioning
+  &-apps {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2.1rem;
+    justify-content: center;
+    align-items: start;
+    grid-column: 1 / 2;
+    grid-row: 2 / 2;
+
+    @include media-breakpoint-up(md) {
+      margin-left: auto;
+    }
+    @include media-breakpoint-up(lg) {
+      grid-column: 1 / 3;
+      grid-row: 2 / 3;
+      margin-bottom: 3rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      flex-flow: row;
+      margin-left: 0;
+      grid-column: 1 / 3;
+      grid-row: 4 / 4;
+      margin-bottom: 3rem;
+    }
+    //Google Play Styling
+    & > div.google-play {
+      & > a {
+        width: 170px;
+        height: 47px;
+
+        @include media-breakpoint-up(xl) {
+          padding: 9px 25px;
+        }
+
+        & > img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    //App Store Styling
+    & > div.app-store {
+      & > a {
+        width: 157px;
+        height: 47px;
+
+        @include media-breakpoint-up(xl) {
+          padding: 9px 25px;
+        }
+
+        & > img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  //Phone Display Position
+  &-display {
+    grid-column: 2 / 2;
+    grid-row: 2 / 2;
+
+    & > div {
+      height: 354px;
+      width: 181px;
+      @include media-breakpoint-up(lg) {
+        height: calc(354px * 1.6);
+        width: calc(184px * 1.6);
+      }
+    }
+    & > div > img {
+      @include media-breakpoint-up(lg) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      grid-column: 3 / 3;
+      grid-row: 2 / 3;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin-left: 3rem;
+      grid-column: 3 / 3;
+      grid-row: 1 / 5;
+    }
+  }
+}
