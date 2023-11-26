@@ -1,0 +1,30 @@
+@use "../styles/custom.scss" as *;
+
+.title-header {
+  border-bottom: 3px solid $steak-dark-red;
+  max-width: 296px;
+  text-align: center;
+
+  @include media-breakpoint-up(xl) {
+    max-width: 631px;
+  }
+
+  & > h2 {
+    font-size: 3rem;
+    color: $steak-dark-red;
+    font-family: "Lobster", sans-serif;
+    margin-bottom: -0.6rem;
+
+    @include media-breakpoint-up(xl) {
+      font-size: 4rem;
+    }
+  }
+
+  &.page-header {
+    margin-top: 2rem;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 6.87rem;
+    }
+  }
+}

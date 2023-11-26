@@ -1,7 +1,11 @@
+import Header from "../elements/Header";
+import Menu from "../components/menu/Menu";
+
 const MenuPage = () => {
   return (
     <main>
-      <h2>Test</h2>
+      <Header title={"Menu"} addClass={"page-header"} />
+      <Menu />
     </main>
   );
 };

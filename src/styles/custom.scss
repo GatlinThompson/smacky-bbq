@@ -6,7 +6,11 @@ $dark-gray: #4e4b4b;
 $steak-rare: #fc0532;
 $steak-dark-red: #a60321;
 $dark-blue: #335461;
+$darkest-blue: #1b2c33;
 $mustard: #fcc605;
+$well-done: #511d26;
+$light-gray: #d9d9d9;
+$gray: #b5b5b5;
 
 //BootStrap Carousel
 $carousel-indicator-width: 0.75em;
@@ -25,10 +29,11 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1078px,
-  xxl: 1078px,
+  xxl: 1079px,
 );
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
 
 :root {
   box-sizing: border-box;
@@ -90,15 +95,10 @@ a.carousel-control-prev {
   }
 
   @include media-breakpoint-up(xl) {
-    width: 10%;
+    width: calc(1078px / 3);
   }
-
-  @include media-breakpoint-up(xxl) {
-    width: 20%;
-  }
-
-  @media all and (min-width: 1441px) {
-    width: 30%;
+  @media all and (min-width: 1800px) {
+    width: calc(1078px / 0.75);
   }
 }
 

@@ -17,6 +17,7 @@ body {
 
 main {
   padding-top: 5.45rem;
+  min-height: calc(100vh - 300px);
   @include media-breakpoint-up(xl) {
     padding-top: 6.35rem;
   }

@@ -1,5 +1,6 @@
 import Jumbotron from "../components/home/Jumbotron";
 import PhoneApp from "../components/home/PhoneApp";
+import Specials from "../components/home/Specials";
 import FancyButton from "../elements/FancyButton";
 
 const HomePage = () => {
@@ -16,7 +17,7 @@ const HomePage = () => {
         />
       </div>
       <PhoneApp />
-      <div>ass</div>
+      <Specials />
     </main>
   );
 };
