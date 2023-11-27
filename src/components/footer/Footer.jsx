@@ -1,5 +1,3 @@
-import tikTok from "../../assets/tiktok.svg";
-
 const Footer = () => {
   return (
     <footer className="">

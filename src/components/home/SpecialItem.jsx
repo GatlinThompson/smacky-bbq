@@ -1,12 +1,13 @@
-import pic from "../../assets/Barebones Burger.png";
-
 import FancyButton from "../../elements/FancyButton";
 
 const SpecialItem = (props) => {
   return (
     <li>
       <div className="mx-auto">
-        <img src={`/src/assets/${props.item.title}.png`} />
+        <img
+          src={`/src/assets/${props.item.title}.png`}
+          alt={`Image of ${props.item.title}`}
+        />
       </div>
       <div className="mx-auto">
         <p className="header text-center special-title">{props.item.title}</p>
@@ -15,7 +16,7 @@ const SpecialItem = (props) => {
         </div>
         <div className="mx-auto">
           <FancyButton
-            location={"/"}
+            location={"menu"}
             title={"See Special"}
             padding={"1rem 2.5rem"}
             fontsize={"2rem"}

@@ -24,7 +24,7 @@ const Jumbotron = () => {
         <Carousel.Caption>
           <Button
             location={"/"}
-            title={"Learn More"}
+            title={"Order Now"}
             addedClass={"jumbotron-button"}
           />
         </Carousel.Caption>
@@ -66,7 +66,7 @@ const Jumbotron = () => {
         <Carousel.Caption>
           <Button
             location={"/"}
-            title={"Learn More"}
+            title={"Order Now"}
             addedClass={"jumbotron-button"}
           />
         </Carousel.Caption>

@@ -8,7 +8,7 @@ const MobileMenu = (props) => {
     >
       <ul>
         <li>
-          <NavLink to="/" onClick={props.closeNav}>
+          <NavLink to="menu" onClick={props.closeNav}>
             Menu
           </NavLink>
         </li>

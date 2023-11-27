@@ -1,20 +1,5 @@
 @use "./custom.scss" as *;
 
-:root {
-  box-sizing: border-box;
-  font-size: 16px;
-}
-
-* ::after,
-::before {
-  box-sizing: inherit;
-  font-family: "Raleway", sans-serif;
-}
-
-body {
-  background-color: $background;
-}
-
 main {
   padding-top: 5.45rem;
   min-height: calc(100vh - 300px);

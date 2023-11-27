@@ -1,5 +1,12 @@
 const menu = [
-  //Hamburgers & Specials
+  {
+    id: 4,
+    title: "Brisket",
+    desc: "Slow-smoked to tender perfection for hours, our prime beef brisket boasts a tantalizing bark on the outside and a juicy, melt-in-your-mouth experience on the inside. Expertly seasoned with our secret blend of spices, each bite is a flavorful journey through the artistry of barbecue.",
+    type: "Meats",
+    special: false,
+    price: 17.88,
+  },
   {
     id: 1,
     title: "Barebones Burger",
@@ -28,14 +35,6 @@ const menu = [
     specialPrice: 11.5,
   },
   {
-    id: 4,
-    title: "Brisket",
-    desc: "Slow-smoked to tender perfection for hours, our prime beef brisket boasts a tantalizing bark on the outside and a juicy, melt-in-your-mouth experience on the inside. Expertly seasoned with our secret blend of spices, each bite is a flavorful journey through the artistry of barbecue.",
-    type: "Meats",
-    special: false,
-    price: 17.88,
-  },
-  {
     id: 5,
     title: "Spare Ribs",
     desc: "Each rack is a masterpiece of flavor, meticulously seasoned and slow-cooked to perfection. Our spare ribs boast a mouthwatering combination of smoky, savory, and sweet notes that dance on your palate with every bite. The meat, tender and juicy, effortlessly pulls away from the bone, delivering a true taste of barbecue excellence. Whether you prefer them slathered in our signature sauce or with the pure, unadulterated flavor of our dry rub, our spare ribs are a celebration of barbecue craftsmanship.",
@@ -57,11 +56,11 @@ const menu = [
     desc: "Our plump and juicy wings are expertly coated in a zesty blend of spicy seasonings, delivering a perfect balance of heat and flavor. Crispy on the outside, tender on the inside, each bite is an explosion of bold tastes that will ignite your taste buds. Paired with your favorite dipping sauce and served with a side of cooling ranch or blue cheese, these wings are a timeless indulgence for spice enthusiasts.",
     type: "Wings",
     special: false,
-    price: 19.98,
+    price: 9.98,
   },
   {
     id: 8,
-    title: "Fire-Kissed Classic Hot Wings",
+    title: "Pepper Blaze Wings",
     desc: "Embark on a flavor adventure with our Pepper Blaze Wings. These wings are dry-rubbed to perfection with an irresistible blend of bold peppers, creating a symphony of heat and spice that will leave your taste buds tingling. The crispy exterior gives way to juicy, succulent meat, making each bite a journey into spicy delight.",
     type: "Wings",
     special: false,

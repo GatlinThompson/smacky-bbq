@@ -11,7 +11,7 @@ const HomePage = () => {
       </section>
       <div className="container  mt-5 text-center">
         <FancyButton
-          location={"/"}
+          location={"menu"}
           title={"Order Here"}
           addClass={"home-order-now-btn"}
         />

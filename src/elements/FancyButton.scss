@@ -8,6 +8,11 @@
   transition: all 100ms ease-in-out;
   padding: 12rem auto;
   border-radius: 0.25rem;
+  transition: all 100ms ease-in-out;
+  text-decoration: none;
+  font-size: 2rem;
+  color: $steak-rare;
+  padding: 12rem auto;
 
   &:hover {
     scale: 1.03;
@@ -41,6 +46,10 @@
 
     @include media-breakpoint-up(lg) {
       margin-top: 1.1rem;
+      font-size: 4rem;
+      padding: 1.5rem 2.5rem;
+      padding: 0.5rem 3rem;
+      font-size: 2.5rem;
     }
     & > a {
       padding: 0.5rem 3rem;
@@ -50,6 +59,21 @@
         font-size: 4rem;
         padding: 1.5rem 2.5rem;
       }
+    }
+  }
+
+  &.oc-buttons {
+    padding: 0.75rem 3.75rem;
+    display: flex;
+    gap: 1.56rem;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+
+    & > a {
+      display: flex;
+      gap: 1.56rem;
+      align-items: center;
     }
   }
 }

@@ -1,0 +1,225 @@
+@use "../../styles/custom.scss" as *;
+
+#menu {
+  & > section {
+    margin-top: 4.63rem;
+    & > h2 {
+      color: $steak-dark-red;
+      font-size: 2rem;
+    }
+
+    & > ul {
+      padding: 0;
+      list-style: none;
+      margin: 0;
+
+      & > li.menu-item {
+        padding-top: 1.37rem;
+        padding-bottom: calc(4.31rem - 1.37rem);
+
+        @include media-breakpoint-up(md) {
+          display: grid;
+          grid-template-columns: auto auto auto;
+          grid-template-rows: auto auto auto;
+          column-gap: 1.9rem;
+        }
+
+        @include media-breakpoint-up(lg) {
+          padding-top: 4.31rem;
+          padding-bottom: calc(6.44rem - 4.31rem);
+          padding-left: 3.75rem;
+        }
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+        & .menu-item {
+          //Image Styling
+          &-img {
+            width: 15.625rem;
+            height: 9.25rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include media-breakpoint-up(md) {
+              grid-row: 1 / span 3;
+              grid-column: 1 / 1;
+              height: 100%;
+            }
+
+            @include media-breakpoint-up(lg) {
+              width: 356px;
+              height: 211px;
+            }
+
+            & > img {
+              width: 100%;
+              height: auto;
+              box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+                0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+              border-radius: 0.1875rem;
+
+              &.hamburgers,
+              &.sandwiches {
+                box-shadow: none;
+              }
+            }
+          }
+
+          //Header Styling
+          &-header {
+            color: $well-done;
+            line-height: 123.8%;
+            margin-bottom: 0.56rem;
+            margin-top: 0.53rem;
+
+            @include media-breakpoint-up(md) {
+              font-size: 2rem;
+              text-align: start;
+            }
+          }
+
+          //Price Styling
+          &-price {
+            color: $steak-dark-red;
+            font-size: 1.5rem;
+
+            & > p {
+              margin: 0;
+
+              & > span.price {
+                text-decoration: line-through;
+              }
+              & > span.special-price {
+                color: $dark-mustard;
+              }
+
+              @include media-breakpoint-up(md) {
+                font-size: 1.25rem;
+              }
+            }
+          }
+
+          //Description Styling
+          &-desc {
+            min-height: 8.375rem;
+
+            @include media-breakpoint-up(md) {
+              min-height: 5.5rem;
+              grid-row: 2 / 2;
+              grid-column: 2 / 4;
+            }
+
+            & > p {
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 6;
+              -webkit-box-orient: vertical;
+              margin: 0;
+
+              @include media-breakpoint-up(md) {
+                -webkit-line-clamp: 3;
+              }
+            }
+          }
+
+          //Customize/Details Button Styling
+          &-extra {
+            margin-top: 1.25rem;
+
+            @include media-breakpoint-up(md) {
+              grid-column: 3 / 4;
+              grid-row: 3 / 4;
+            }
+          }
+
+          //Customize/Details Button Styling
+          &-order {
+            margin-top: 1.12rem;
+
+            @include media-breakpoint-up(md) {
+              grid-column: 2 / 3;
+              grid-row: 3 / 4;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//Price and Header Positioning
+.menu-item-price-head {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  @include media-breakpoint-up(md) {
+    justify-content: space-between;
+    grid-row: 1 / 2;
+    grid-column: 2 / 4;
+    flex-flow: row;
+  }
+}
+
+//Form Positioning
+#menu-search-bar {
+  margin-top: calc(2rem - 2px);
+
+  @include media-breakpoint-up(md) {
+    margin-top: 4.875rem;
+    margin-left: auto;
+    max-width: 364px;
+  }
+  @include media-breakpoint-up(xl) {
+    top: 9.35rem;
+  }
+}
+
+//Menu Catergories Styling
+.menu-catergories {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  gap: 2.6rem;
+  overflow-x: scroll;
+  border-bottom: 2px solid $dark-blue;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    justify-content: center;
+    font-size: 1.25rem;
+  }
+
+  & > li {
+    padding-top: 1.75rem;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 4rem;
+    }
+    & > a {
+      color: $dark-blue;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}
+
+.menu-search {
+  background-color: $background;
+  position: -webkit-sticky;
+  position: sticky;
+  padding-top: 3rem;
+  top: 2.35rem;
+}

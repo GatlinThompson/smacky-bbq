@@ -1,0 +1,47 @@
+@use "../../styles/custom.scss" as *;
+
+.menu-offcanvas {
+  padding: 1.5rem;
+  & > div.offcanvas-button {
+    display: flex;
+    justify-content: s;
+    & > button {
+      margin-left: auto;
+      background-color: transparent;
+      color: $dark-blue;
+      border: none;
+      font-size: 2.2rem;
+      font-weight: bold;
+    }
+  }
+
+  & > div.offcanvas-title {
+    text-align: center;
+
+    & > h2 {
+      font-size: 1.5rem;
+      color: $well-done;
+    }
+  }
+
+  & > div.delivery,
+  & > div.location {
+    margin-top: 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: calc(2rem - 2px);
+    & > p {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    & i {
+      font-size: 31px;
+    }
+  }
+
+  & > div.location {
+    & > div:nth-child(1) {
+    }
+  }
+}

@@ -8,7 +8,7 @@ const NavDesktop = () => {
       <ul className="nav-desktop d-none d-xl-flex">
         <div>
           <li>
-            <NavLink to="/">Menu</NavLink>
+            <NavLink to="menu">Menu</NavLink>
           </li>
           <li>
             <NavLink to="/">Rewards</NavLink>
@@ -37,7 +37,7 @@ const NavDesktop = () => {
         </div>
         <li className="desktop-button">
           <FancyButton
-            location={"/"}
+            location={"menu"}
             title={"Start Order"}
             padding={"0 1rem"}
           />
