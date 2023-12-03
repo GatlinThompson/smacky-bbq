@@ -9,7 +9,9 @@ const MenuItem = (props) => {
     <li className="menu-item col-12">
       <div className="menu-item-img mx-auto">
         <img
-          src={`/src/assets/${props.item.title}.png`}
+          src={`/src/assets/${props.item.title
+            .toLowerCase()
+            .replace(/\s/g, "_")}.png`}
           alt={`Image of ${props.item.title}`}
           className={`${props.item.type.toLowerCase()}`}
         />

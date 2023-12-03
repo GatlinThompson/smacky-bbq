@@ -5,7 +5,9 @@ const SpecialItem = (props) => {
     <li>
       <div className="mx-auto">
         <img
-          src={`/src/assets/${props.item.title}.png`}
+          src={`/src/assets/${props.item.title
+            .toLowerCase()
+            .replace(/\s/g, "_")}.png`}
           alt={`Image of ${props.item.title}`}
         />
       </div>
