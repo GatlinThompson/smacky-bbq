@@ -1,17 +1,33 @@
 import Button from "../../elements/Button";
 import FancyButton from "../../elements/FancyButton";
+import { useEffect, useState } from "react";
 
 const MenuItem = (props) => {
+  const [imageSrc, setImageSrc] = useState(null);
+
   const showCanvas = () => {
     console.log("MENU ITEM");
   };
+
+  useEffect(() => {
+    // Dynamically import the image
+    import(
+      `../../assets/${props.item.title.toLowerCase().replace(/\s/g, "_")}.png`
+    )
+      .then((module) => {
+        // Once the image is imported, update the state to trigger a re-render
+        setImageSrc(module.default);
+      })
+      .catch((error) => {
+        console.error("Error loading image:", error);
+      });
+  }, []);
+
   return (
     <li className="menu-item col-12">
       <div className="menu-item-img mx-auto">
         <img
-          src={`/src/assets/${props.item.title
-            .toLowerCase()
-            .replace(/\s/g, "_")}.png`}
+          src={imageSrc}
           alt={`Image of ${props.item.title}`}
           className={`${props.item.type.toLowerCase()}`}
         />
