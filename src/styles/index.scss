@@ -1,20 +1,20 @@
-@use "./custom.scss" as *;
+@import "./custom.scss";
 
-@use "./App.scss";
+@import "./App.scss";
 
 //Componets
-@use "./navbar.scss";
-@use "../components/home/home.scss";
-@use "../components/menu/menu.scss";
-@use "../components/footer/footer.scss";
-@use "../components/offcanvas/offcanvas.scss";
+@import "./navbar.scss";
+@import "../components/home/home.scss";
+@import "../components/menu/menu.scss";
+@import "../components/footer/footer.scss";
+@import "../components/offcanvas/offcanvas.scss";
 
 //Elements
-@use "../elements/FancyButton.scss";
-@use "../elements/Button.scss";
-@use "../elements/Header.scss";
-@use "../elements/InputWithIcon.scss";
-@use "../elements/LocationSearch.scss";
+@import "../elements/FancyButton.scss";
+@import "../elements/Button.scss";
+@import "../elements/Header.scss";
+@import "../elements/InputWithIcon.scss";
+@import "../elements/LocationSearch.scss";
 
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Angkor&display=swap");
