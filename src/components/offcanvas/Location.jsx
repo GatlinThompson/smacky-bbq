@@ -1,23 +1,32 @@
+import { useState } from "react";
 import FancyButton from "../../elements/FancyButton";
-import InputWithIcon from "../../elements/InputWithIcon";
+//import InputWithIcon from "../../elements/InputWithIcon";
+import LocationSearch from "../../elements/LocationSearch";
 
 const Location = (props) => {
+  const [location, setLocation] = useState("");
+
   const handleStage = () => {
-    console.log("ASDASD");
+    props.setStage("delivery");
   };
 
   const formSubmit = (event) => {
     event.preventDefault();
+
+    if ((location.trim().length = 0)) {
+      return;
+    }
   };
+
+  const setLocationHandler = (location) => {
+    setLocation(location);
+  };
+
   return (
     <div className="location">
       <div>
         <form onSubmit={formSubmit}>
-          <InputWithIcon
-            title={"Address"}
-            icon={"bi bi-geo-alt"}
-            placeholder={"Enter your address"}
-          />
+          <LocationSearch setLocation={setLocationHandler} />
         </form>
       </div>
       <p className="text-center">OR</p>
@@ -35,6 +44,7 @@ const Location = (props) => {
           onClick={handleStage}
         />
       </div>
+      <div></div>
     </div>
   );
 };

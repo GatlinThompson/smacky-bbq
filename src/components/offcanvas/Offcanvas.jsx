@@ -46,7 +46,7 @@ function Offcanvass(props) {
           {stage == "delivery" && <h2 className="header">Delivery Method</h2>}
           {stage == "location" && <h2 className="header">Find Location</h2>}
         </div>
-        {stage == "location" && <Location />}
+        {stage == "location" && <Location setStage={handleStage} />}
         {stage == "delivery" && <Delivery setStage={handleStage} />}
       </Offcanvas>
     </>
