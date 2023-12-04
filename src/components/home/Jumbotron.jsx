@@ -1,7 +1,7 @@
-import pic_1 from "../../assets/jumbotron_1.png";
-import pic_2 from "../../assets/jumbotron_2.png";
-import pic_3 from "../../assets/jumbotron_3.png";
-import pic_4 from "../../assets/jumbotron_4.png";
+import pic_1 from "../../assets/jumbotron_1.webp";
+import pic_2 from "../../assets/jumbotron_2.webp";
+import pic_3 from "../../assets/jumbotron_3.webp";
+import pic_4 from "../../assets/jumbotron_4.webp";
 import Carousel from "react-bootstrap/Carousel";
 import { useState } from "react";
 import Button from "../../elements/Button";
