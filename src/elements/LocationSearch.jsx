@@ -13,9 +13,11 @@ const LocationSearch = (props) => {
 
     // Call the Google Places Autocomplete API
     axios
-      .get(
-        `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${value}&key=AIzaSyDvnTtdpTq402kGwLhB3ivwChkLWB8v6yM`
-      )
+      .get("/.netlify/functions/getPlaces", {
+        params: {
+          input: value,
+        },
+      })
       .then((response) => {
         setLocations(response.data.predictions.slice(0, 4));
       })
