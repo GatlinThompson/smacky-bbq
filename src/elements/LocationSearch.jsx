@@ -12,49 +12,41 @@ const LocationSearch = (props) => {
     props.setLocation(event.target.value);
 
     // Call the Google Places Autocomplete API
-    //   axios
-    //     .get(
-    //       `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${value}&key=AIzaSyDvnTtdpTq402kGwLhB3ivwChkLWB8v6yM`,
-    //       {
-    //         headers: {
-    //           "Access-Control-Allow-Origin": "*",
-    //           Authorization: "Bearer AIzaSyDvnTtdpTq402kGwLhB3ivwChkLWB8v6yM",
-    //           "Content-Type": "application/json",
-    //         },
-    //       }
-    //     )
-    //     .then((response) => {
-    //       setLocations(response.data.predictions.slice(0, 4));
-    //     })
-    //     .catch((error) => {
-    //       console.error("Error fetching predictions:", error);
-    //     });
-
-    //   setSeeLocations(true);
+    axios
+      .get(
+        `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${value}&key=AIzaSyDvnTtdpTq402kGwLhB3ivwChkLWB8v6yM`
+      )
+      .then((response) => {
+        setLocations(response.data.predictions.slice(0, 4));
+      })
+      .catch((error) => {
+        console.error("Error fetching predictions:", error);
+      });
+    setSeeLocations(true);
   };
 
-  useEffect(() => {
-    const fetchLocation = async () => {
-      try {
-        const response = await fetch(
-          `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${query}&key=AIzaSyDvnTtdpTq402kGwLhB3ivwChkLWB8v6yM`
-        );
-
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-
-        const data = await response.json();
-        setLocations(data.predictions.slice(0, 4));
-      } catch (error) {
-        console.error("Error fetching predictions:", error);
-      } finally {
-        setSeeLocations(true);
-      }
-    };
-
-    fetchLocation();
-  }, [query]);
+  // useEffect(() => {
+  // const fetchLocation = async () => {
+  // try {
+  // const response = await fetch(
+  // `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${query}&key=AIzaSyDvnTtdpTq402kGwLhB3ivwChkLWB8v6yM`
+  // );
+  //
+  // if (!response.ok) {
+  // throw new Error("Network response was not ok");
+  // }
+  //
+  // const data = await response.json();
+  // setLocations(data.predictions.slice(0, 4));
+  // } catch (error) {
+  // console.error("Error fetching predictions:", error);
+  // } finally {
+  // setSeeLocations(true);
+  // }
+  // };
+  //
+  // fetchLocation();
+  // }, [query]);
 
   const changeLocation = (event) => {
     setQuery(event.target.innerText);
