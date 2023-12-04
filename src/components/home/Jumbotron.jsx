@@ -18,7 +18,7 @@ const Jumbotron = () => {
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
-        <LazyLoadImage
+        <img
           src={pic_1}
           className="d-block w-100"
           effect="blur"
@@ -33,7 +33,7 @@ const Jumbotron = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <LazyLoadImage
+        <img
           src={pic_2}
           className="d-block w-100"
           effect="blur"
@@ -48,7 +48,7 @@ const Jumbotron = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <LazyLoadImage
+        <img
           src={pic_3}
           effect="blur"
           className="d-block w-100"
@@ -63,7 +63,7 @@ const Jumbotron = () => {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <LazyLoadImage
+        <img
           src={pic_4}
           className="d-block w-100"
           effect="blur"

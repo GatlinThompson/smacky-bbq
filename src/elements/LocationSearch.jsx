@@ -11,13 +11,11 @@ const LocationSearch = (props) => {
     setQuery(value);
     props.setLocation(event.target.value);
 
-    // Call the Google Places Autocomplete API
+    //Toggle CORS off for full effect otherwise wishful thinking
     axios
-      .get("/.netlify/functions/getPlaces", {
-        params: {
-          input: value,
-        },
-      })
+      .get(
+        `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${value}&key=AIzaSyDvnTtdpTq402kGwLhB3ivwChkLWB8v6yM`
+      )
       .then((response) => {
         setLocations(response.data.predictions.slice(0, 4));
       })
@@ -26,30 +24,6 @@ const LocationSearch = (props) => {
       });
     setSeeLocations(true);
   };
-
-  // useEffect(() => {
-  // const fetchLocation = async () => {
-  // try {
-  // const response = await fetch(
-  // `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${query}&key=AIzaSyDvnTtdpTq402kGwLhB3ivwChkLWB8v6yM`
-  // );
-  //
-  // if (!response.ok) {
-  // throw new Error("Network response was not ok");
-  // }
-  //
-  // const data = await response.json();
-  // setLocations(data.predictions.slice(0, 4));
-  // } catch (error) {
-  // console.error("Error fetching predictions:", error);
-  // } finally {
-  // setSeeLocations(true);
-  // }
-  // };
-  //
-  // fetchLocation();
-  // }, [query]);
-
   const changeLocation = (event) => {
     setQuery(event.target.innerText);
     closeLocations();
