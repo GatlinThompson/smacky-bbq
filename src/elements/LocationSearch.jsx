@@ -9,10 +9,10 @@ const LocationSearch = (props) => {
   const handleSearch = async (value) => {
     try {
       const response = await axios.get(
-        `/.netlify/functions/getPlaces?input=${encodeURIComponent(value)}`
+        `/.netlify/functions/locations?input=${encodeURIComponent(value)}`
       );
       setLocations(response.data);
-      console.log(response);
+      console.log(response.data);
     } catch (error) {
       console.error("Error fetching predictions:", error);
     }
