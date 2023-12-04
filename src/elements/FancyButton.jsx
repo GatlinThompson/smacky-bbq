@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const FancyButton = (props) => {
   const style = {
@@ -16,9 +16,9 @@ const FancyButton = (props) => {
       onClick={props.onClick}
     >
       {props.location && (
-        <NavLink to={`${props.location}`} style={anchorStyle}>
+        <Link to={`${props.location}`} style={anchorStyle}>
           {props.title}
-        </NavLink>
+        </Link>
       )}
       {!props.location && props.title}
     </button>

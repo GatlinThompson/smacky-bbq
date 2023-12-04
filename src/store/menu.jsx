@@ -1,7 +1,7 @@
 const menu = [
   {
     id: 4,
-    title: "Brisket",
+    title: "Smoked Brisket",
     desc: "Slow-smoked to tender perfection for hours, our prime beef brisket boasts a tantalizing bark on the outside and a juicy, melt-in-your-mouth experience on the inside. Expertly seasoned with our secret blend of spices, each bite is a flavorful journey through the artistry of barbecue.",
     type: "Meats",
     special: false,

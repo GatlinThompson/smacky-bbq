@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Delivery from "./Delivery";
 import Location from "./Location";
+import Cart from "./Cart";
+import backArrow from "../../assets/back_blue.svg";
+
 function Offcanvass(props) {
   const [show, setShow] = useState(false);
 
@@ -34,7 +37,7 @@ function Offcanvass(props) {
         <div className="offcanvas-button">
           {stage == "location" && (
             <button type="button" onClick={setDelivery} className="mx-0">
-              &lt;
+              <img src={backArrow} />
             </button>
           )}
 
@@ -43,11 +46,22 @@ function Offcanvass(props) {
           </button>
         </div>
         <div className="offcanvas-title">
-          {stage == "delivery" && <h2 className="header">Delivery Method</h2>}
-          {stage == "location" && <h2 className="header">Find Location</h2>}
+          {stage == "delivery" && <h1 className="header">Delivery Method</h1>}
+          {stage == "location" && <h1 className="header">Find Location</h1>}
+          {stage == "cart" && <h1 className="header">Your Cart</h1>}
         </div>
-        {stage == "location" && <Location setStage={handleStage} />}
+        {stage == "location" && (
+          <Location
+            setStage={handleStage}
+            showModal={props.showModal}
+            detailsPage={props.detailsPage}
+            itemId={props.itemId}
+          />
+        )}
         {stage == "delivery" && <Delivery setStage={handleStage} />}
+        {stage == "cart" && (
+          <Cart setStage={handleStage} onClick={handleClose} />
+        )}
       </Offcanvas>
     </>
   );

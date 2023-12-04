@@ -1,14 +1,12 @@
 import { createContext } from "react";
+import { updateAddress } from "./cart";
 
 const UserContext = createContext({
-  loggedIn: false,
+  order: false,
   cart: [],
-  totalAmount: 0,
-  addItem: (item) => {},
-  lowerItem: (item) => {},
-  login: (name, id) => {},
-  getCart: (id) => {},
-  order: () => {},
+  address: "Main Street 1500 N Ogden, UT. USA",
+  startOrder: () => {},
+  updateAddress: () => {},
 });
 
 export default UserContext;

@@ -1,7 +1,7 @@
 const Header = (props) => {
   return (
     <div className={`title-header mx-auto ${props.addClass}`}>
-      <h2>{props.title}</h2>
+      <h1>{props.title}</h1>
     </div>
   );
 };

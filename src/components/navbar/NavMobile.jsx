@@ -3,12 +3,12 @@ import hambugerMenu from "../../assets/navbar-toggle-icon.svg";
 import logo from "../../assets/logo-right.svg";
 import MobileMenu from "./MobileMenu";
 import { useState } from "react";
+import Bag from "../../assets/bag_with_item.svg";
 
-const NavMobile = () => {
+const NavMobile = (props) => {
   const [toggleNav, setToggleNav] = useState(false);
   const [start, setStart] = useState("");
   const [growing, setGrowing] = useState("");
-  const [height, setHeight] = useState(0);
 
   const navBarToggle = () => {
     if (!toggleNav) {
@@ -16,7 +16,12 @@ const NavMobile = () => {
       setGrowing("growing");
 
       const timer = setTimeout(() => {
-        setStart("start");
+        if (props.order) {
+          setStart("start ordered");
+        } else {
+          setStart("start");
+        }
+
         clearTimeout(timer);
       }, 1);
     } else {
@@ -38,6 +43,10 @@ const NavMobile = () => {
     }
   };
 
+  const showCartCanvas = () => {
+    props.showCartCanvas;
+  };
+
   return (
     <>
       <div className="nav-mobile d-flex d-xl-none">
@@ -50,7 +59,13 @@ const NavMobile = () => {
           </div>
         </NavLink>
 
-        <div>
+        <div className="d-flex">
+          {props.order && (
+            <button className="bag-icon me-1" onClick={props.showCartCanvas}>
+              <img src={Bag} style={{ width: "27px", height: "29px" }} />
+              <span className="bag-number">1</span>
+            </button>
+          )}
           <button className="nav-menu d-xl-none d-block" onClick={navBarToggle}>
             <img src={hambugerMenu} alt="hamburger menu icon" />
           </button>
@@ -60,8 +75,8 @@ const NavMobile = () => {
         <MobileMenu
           growing={growing}
           start={start}
-          height={height}
           closeNav={closeNav}
+          order={props.order}
         />
       )}
     </>

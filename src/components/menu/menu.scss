@@ -51,16 +51,20 @@
               height: 211px;
             }
 
-            & > img {
-              width: 100%;
-              height: auto;
-              box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
-                0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-              border-radius: 0.1875rem;
+            & > span {
+              z-index: -1;
+              & > img {
+                width: 100%;
+                height: auto;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+                  0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                border-radius: 0.1875rem;
 
-              &.hamburgers,
-              &.sandwiches {
-                box-shadow: none;
+                &.hamburgers,
+                &.sandwiches {
+                  box-shadow: none;
+                  background-color: none;
+                }
               }
             }
           }
@@ -71,6 +75,7 @@
             line-height: 123.8%;
             margin-bottom: 0.56rem;
             margin-top: 0.53rem;
+            font-size: calc(1.25rem + 2px);
 
             @include media-breakpoint-up(md) {
               font-size: 2rem;

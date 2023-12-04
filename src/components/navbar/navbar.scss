@@ -1,5 +1,3 @@
-@import "./custom.scss";
-
 @mixin link {
   text-decoration: none;
   font-size: 1.5rem;
@@ -129,6 +127,31 @@
     }
     &.start {
       height: calc(313.3px + 2.06rem);
+
+      &.ordered {
+        max-height: calc(213.3px + 2.06rem);
+      }
+    }
+  }
+}
+
+.bag-icon {
+  background-color: $nav-bg;
+  border: none;
+  position: relative;
+
+  & > span {
+    color: $steak-rare;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.125rem;
+    top: 57.5%;
+    line-height: 0%;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 2rem;
     }
   }
 }

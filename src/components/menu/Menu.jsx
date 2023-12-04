@@ -4,11 +4,18 @@ import MenuItem from "./MenuItem";
 import Offcanvas from "../offcanvas/Offcanvas";
 import InputWithIcon from "../../elements/InputWithIcon";
 import MenuCatergories from "./MenuCatergories";
+import Modal from "../modal/Modal";
+import FancyButton from "../../elements/FancyButton";
 
-const Menu = () => {
+const Menu = (props) => {
   //Intial setup
   const [menuFiltered, setMenu] = useState(menu);
   const [stage, setStage] = useState("");
+
+  const [show, setShowModal] = useState(false);
+
+  const [selectedItem, setSelectedItem] = useState("");
+
   //Gets unqiue values of catergories
   const [catergories, setCaterogries] = useState([
     ...new Set(menu.map((catergory) => catergory.type)),
@@ -37,17 +44,36 @@ const Menu = () => {
     event.preventDefault();
   };
 
-  const showCanvasHandler = () => {
-    setShowCanvas(true);
-    setStage("delivery");
+  const showCanvasHandler = (item) => {
+    setSelectedItem(item);
+    if (!props.order) {
+      setShowCanvas(true);
+      setStage("delivery");
+      return;
+    }
+    showModal();
   };
 
   const hideCanvas = () => setShowCanvas(false);
 
+  const showModal = () => {
+    setShowModal(true);
+    setShowCanvas(false);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   const specials = menuFiltered
     .filter((item) => item.special === true)
     .map((item) => (
-      <MenuItem key={item.id} item={item} showCanvas={showCanvasHandler} />
+      <MenuItem
+        key={item.id}
+        item={item}
+        showCanvas={showCanvasHandler}
+        order={props.order}
+      />
     ));
 
   return (
@@ -78,6 +104,7 @@ const Menu = () => {
                     key={item.id}
                     item={item}
                     showCanvas={showCanvasHandler}
+                    order={props.order}
                   />
                 ))}
             </ul>
@@ -99,8 +126,11 @@ const Menu = () => {
       <Offcanvas
         showCanvas={showCanvas}
         hideCanvas={hideCanvas}
+        showModal={showModal}
         stage={stage}
       />
+
+      <Modal show={show} selectedItem={selectedItem} closeModal={closeModal} />
     </div>
   );
 };

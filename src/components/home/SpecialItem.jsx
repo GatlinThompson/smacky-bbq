@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import FancyButton from "../../elements/FancyButton";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const SpecialItem = (props) => {
   const [imageSrc, setImageSrc] = useState(null);
@@ -21,7 +22,7 @@ const SpecialItem = (props) => {
   return (
     <li>
       <div className="mx-auto">
-        <img src={imageSrc} alt={`Image of ${props.item.title}`} />
+        <LazyLoadImage src={imageSrc} alt={`Image of ${props.item.title}`} />
       </div>
       <div className="mx-auto">
         <p className="header text-center special-title">{props.item.title}</p>
@@ -30,7 +31,7 @@ const SpecialItem = (props) => {
         </div>
         <div className="mx-auto">
           <FancyButton
-            location={"menu"}
+            location={"/menu"}
             title={"See Special"}
             padding={"1rem 2.5rem"}
             fontsize={"2rem"}

@@ -3,12 +3,13 @@ import phone from "../../assets/phone.svg";
 import googlePlay from "../../assets/google_play.svg";
 import appStore from "../../assets/app_store.svg";
 import { NavLink } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const PhoneApp = () => {
   return (
     <section id="phone-app">
-      <div>
-        <img src={slant} />
+      <div className="slant">
+        <LazyLoadImage src={slant} />
       </div>
       <div className="phone">
         <div className="container-lg">
@@ -32,7 +33,7 @@ const PhoneApp = () => {
             </div>
             <div className="phone-display">
               <div>
-                <img
+                <LazyLoadImage
                   src={phone}
                   alt="cartoon phone with Smacky's logo"
                   className=""

@@ -32,13 +32,15 @@ const MobileMenu = (props) => {
             Login/Signup
           </NavLink>
         </li>
-        <li className="nav-button" onClick={props.closeNav}>
-          <FancyButton
-            location={"menu"}
-            title={"Start Order"}
-            addClass={"navbtn"}
-          />
-        </li>
+        {!props.order && (
+          <li className="nav-button" onClick={props.closeNav}>
+            <FancyButton
+              location={"menu"}
+              title={"Start Order"}
+              addClass={"navbtn"}
+            />
+          </li>
+        )}
       </ul>
     </div>
   );

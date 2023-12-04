@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Button = (props) => {
   const style = {
@@ -7,7 +7,9 @@ const Button = (props) => {
   };
   return (
     <button className={`button ${props.addedClass}`} style={style}>
-      <NavLink to={`${props.location}`}>{props.title}</NavLink>
+      <Link to={`${props.location}`} onClick={props.onClick}>
+        {props.title}
+      </Link>
     </button>
   );
 };

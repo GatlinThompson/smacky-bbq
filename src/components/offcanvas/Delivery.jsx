@@ -1,6 +1,4 @@
 import FancyButton from "../../elements/FancyButton";
-import { Shop } from "react-bootstrap-icons";
-import { CarFront } from "react-bootstrap-icons";
 
 const Delivery = (props) => {
   const handleStage = () => {

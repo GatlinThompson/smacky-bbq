@@ -1,17 +1,21 @@
 import logo from "../../assets/logo-bottom.svg";
 import { NavLink } from "react-router-dom";
 import FancyButton from "../../elements/FancyButton";
+import { cart } from "../../store/cart";
+import { useContext, useEffect, useState } from "react";
+import UserContext from "../../store/user-context";
+import Bag from "../../assets/bag_with_item.svg";
 
-const NavDesktop = () => {
+const NavDesktop = (props) => {
   return (
     <>
       <ul className="nav-desktop d-none d-xl-flex">
         <div>
           <li>
-            <NavLink to="menu">Menu</NavLink>
+            <NavLink to={props.order ? "order" : "menu"}>Menu</NavLink>
           </li>
           <li>
-            <NavLink to="/">Rewards</NavLink>
+            <NavLink to="rewards">Rewards</NavLink>
           </li>
           <li>
             <NavLink to="/">Locations</NavLink>
@@ -36,11 +40,20 @@ const NavDesktop = () => {
           </li>
         </div>
         <li className="desktop-button">
-          <FancyButton
-            location={"menu"}
-            title={"Start Order"}
-            padding={"0 1rem"}
-          />
+          {!props.order && (
+            <FancyButton
+              location={"menu"}
+              title={"Start Order"}
+              padding={"0 1rem"}
+            />
+          )}
+
+          {props.order && (
+            <button className="bag-icon me-5" onClick={props.showCartCanvas}>
+              <img src={Bag} style={{ width: "57px", height: "67px" }} />
+              <span className="bag-number">1</span>
+            </button>
+          )}
         </li>
       </ul>
     </>

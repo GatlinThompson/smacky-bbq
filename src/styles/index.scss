@@ -1,13 +1,20 @@
 @use "./custom.scss";
-
 @import "./App.scss";
 
+//Fonts
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Angkor&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
 //Componets
-@import "./navbar.scss";
+@import "../components/navbar/navbar.scss";
 @import "../components/home/home.scss";
 @import "../components/menu/menu.scss";
 @import "../components/footer/footer.scss";
 @import "../components/offcanvas/offcanvas.scss";
+@import "../components/details/details.scss";
+@import "../components/modal/modal.scss";
+@import "../components/details/customize.scss";
 
 //Elements
 @import "../elements/FancyButton.scss";
@@ -15,10 +22,6 @@
 @import "../elements/Header.scss";
 @import "../elements/InputWithIcon.scss";
 @import "../elements/LocationSearch.scss";
-
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Angkor&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 :root {
   box-sizing: border-box;
