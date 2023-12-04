@@ -6,29 +6,41 @@ const LocationSearch = (props) => {
   const [locations, setLocations] = useState([]);
   const [seeLocations, setSeeLocations] = useState(false);
 
+  const handleSearch = async (value) => {
+    try {
+      const response = await axios.get(
+        `/.netlify/functions/getPlaces?input=${encodeURIComponent(value)}`
+      );
+      setLocations(response.data);
+      console.log(response);
+    } catch (error) {
+      console.error("Error fetching predictions:", error);
+    }
+    setSeeLocations(true);
+  };
+
   const changeHandler = (event) => {
     const value = event.target.value;
     setQuery(value);
     props.setLocation(event.target.value);
+    handleSearch(value);
 
     // Call the Google Places Autocomplete API
-    axios
-      .get(
-        `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${value}&key=AIzaSyDvnTtdpTq402kGwLhB3ivwChkLWB8v6yM`
-      )
-      .then((response) => {
-        setLocations(response.data.predictions.slice(0, 4));
-      })
-      .catch((error) => {
-        console.error("Error fetching predictions:", error);
-      });
+    //   axios
+    //     .get(
+    //       `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${value}&key=AIzaSyDvnTtdpTq402kGwLhB3ivwChkLWB8v6yM`
+    //     )
+    //     .then((response) => {
+    //       setLocations(response.data.predictions.slice(0, 4));
+    //     })
+    //     .catch((error) => {
+    //       console.error("Error fetching predictions:", error);
+    //     });
 
-    setSeeLocations(true);
+    //   setSeeLocations(true);
   };
 
   const changeLocation = (event) => {
-    console.log(event.target.innerText);
-
     setQuery(event.target.innerText);
     closeLocations();
     props.setLocation(event.target.innerText);
@@ -65,18 +77,7 @@ const LocationSearch = (props) => {
       </div>
       {seeLocations && locations.length >= 1 && (
         <div className="location-results mx-auto">
-          <ul>
-            {locations.map((location) => (
-              <li
-                key={location.place_id}
-                onClick={changeLocation}
-                onMouseDown={changeLocation}
-              >
-                <i className="bi bi-geo-alt-fill location-icon"></i>
-                {location.description}
-              </li>
-            ))}
-          </ul>
+          <ul></ul>
         </div>
       )}
     </>
