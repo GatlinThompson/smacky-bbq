@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import Details from "../components/details/Details";
 import { useParams } from "react-router";
+import { Helmet } from "react-helmet";
+
 const CustomizePage = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
