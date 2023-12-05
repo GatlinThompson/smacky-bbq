@@ -3,21 +3,23 @@ import { useEffect, useState } from "react";
 
 const RewardItem = (props) => {
   const [imageSrc, setImageSrc] = useState(null);
+
   useEffect(() => {
     // Dynamically import the image
-    import(`../${props.image}`)
-      .then((response) => {
+    import(`../../assets/${props.image}.png`)
+      .then((module) => {
         // Once the image is imported, update the state to trigger a re-render
-        setImageSrc(response.default);
+        setImageSrc(module.default);
       })
       .catch((error) => {
         console.error(error);
       });
   }, []);
+
   return (
     <div className="reward-item col-12 col-lg-9 mx-auto">
       <div className="reward-item-img">
-        <img src={imageSrc}></img>
+        <img src={imageSrc} />
       </div>
       <div className="reward-item-content">
         <h2 className="header">{props.title}</h2>
