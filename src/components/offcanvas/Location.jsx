@@ -23,14 +23,12 @@ const Location = (props) => {
     if (location.trim().length == 0) {
       return;
     }
-    //userCtx.updateAddress(location);
+    userCtx.updateAddress(location);
     handleStage();
   };
 
   const setLocationHandler = (location) => {
     setLocation(location);
-    userCtx.updateAddress(location);
-    console.log(userCtx);
   };
 
   return (

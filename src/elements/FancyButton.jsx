@@ -14,6 +14,8 @@ const FancyButton = (props) => {
       className={`fancy-button ${props.addClass}`}
       style={style}
       onClick={props.onClick}
+      default-location={"true"}
+      type="button"
     >
       {props.location && (
         <Link to={`${props.location}`} style={anchorStyle}>

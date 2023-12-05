@@ -1,5 +1,4 @@
 import { createContext } from "react";
-import { updateAddress } from "./cart";
 
 const UserContext = createContext({
   order: false,

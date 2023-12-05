@@ -1,0 +1,80 @@
+//Login Form Styling
+.login-form {
+  margin-top: 3rem;
+
+  & > form {
+    & > div:not(.remember-password) {
+      margin-top: 2rem;
+    }
+
+    & > div.remember-password {
+      margin-top: 0.875rem;
+
+      & > div:nth-of-type(1) {
+        display: flex;
+        justify-content: flex-end;
+
+        & > a {
+          color: $steak-dark-red;
+        }
+      }
+    }
+  }
+}
+
+//Checkbox Styling
+.remember-login-checkbox {
+  user-select: none;
+  width: 27px;
+  height: 27px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border: 1px solid $dark-white;
+  border-radius: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  margin-right: 6px;
+  font-size: 1.125rem;
+
+  & input:checked {
+    border-color: $lime-green;
+  }
+
+  .checkmark {
+    background-color: $white;
+    font-size: 25px;
+    line-height: 0;
+    color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.5rem;
+    }
+  }
+
+  & input:checked + .checkmark {
+    color: $lime-green;
+  }
+
+  & > input {
+    display: none;
+  }
+}
+
+//OR Styling
+.or {
+  margin-top: 2.5rem;
+  font-size: 2.5rem;
+  color: $dark-blue;
+
+  & > p {
+    margin: 0;
+  }
+}

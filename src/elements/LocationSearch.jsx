@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import UserContext from "../store/user-context";
+import { useContext } from "react";
 
 const LocationSearch = (props) => {
   const [query, setQuery] = useState("");
   const [locations, setLocations] = useState([]);
   const [seeLocations, setSeeLocations] = useState(false);
+  const userCtx = useContext(UserContext);
 
   const changeHandler = (event) => {
     const value = event.target.value;
     setQuery(value);
     props.setLocation(event.target.value);
+    userCtx.updateAddress(event.target.value);
 
-    //Toggle CORS off for full effect otherwise wishful thinking
+    //Toggle CORS off for full effect otherwise wishful thinking.
+    //Good chrome extension
     axios
       .get(
         `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${value}&key=AIzaSyDvnTtdpTq402kGwLhB3ivwChkLWB8v6yM`
@@ -24,6 +29,7 @@ const LocationSearch = (props) => {
       });
     setSeeLocations(true);
   };
+
   const changeLocation = (event) => {
     setQuery(event.target.innerText);
     closeLocations();

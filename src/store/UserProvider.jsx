@@ -8,15 +8,14 @@ const defaultUserState = {
 };
 
 const userReducer = (state, action) => {
-  if ((action.type = "ORDER")) {
+  if (action.type === "ORDER") {
     return {
       ...state,
       order: action.order,
     };
   }
 
-  if (action.type == "ADDRESS") {
-    console.log("ASDASD");
+  if (action.type === "ADDRESS") {
     return {
       ...state,
       address: action.address,

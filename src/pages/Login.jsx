@@ -1,9 +1,9 @@
 import Header from "../elements/Header";
-import { useEffect } from "react";
 import { Helmet } from "react-helmet";
-import Rewards from "../components/rewards/Rewards";
+import { useEffect } from "react";
+import Login from "../components/login/Login";
 
-const RewardsPage = () => {
+const LoginPage = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, []);
@@ -11,14 +11,14 @@ const RewardsPage = () => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Smacky's | Rewards</title>
+        <title>Smacky's | Login</title>
       </Helmet>
       <main className="container-xxl">
-        <Header title={"Rewards"} addClass={"page-header"} />
-        <Rewards />
+        <Header title={"Login"} addClass={"page-header"} />
+        <Login />
       </main>
     </>
   );
 };
 
-export default RewardsPage;
+export default LoginPage;

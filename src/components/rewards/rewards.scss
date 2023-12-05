@@ -1,0 +1,65 @@
+.reward {
+  margin-top: 3rem;
+
+  .reward-item {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    row-gap: 1.25rem;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: calc(4rem + 8px);
+      flex-wrap: nowrap;
+      gap: 3rem;
+    }
+
+    //Image Styling
+    &-img {
+      & > img {
+        width: 100%;
+        height: auto;
+        border: 3px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+          0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    //Content Styling
+    &-content {
+      flex: 1;
+      & > h2 {
+        font-size: 18px;
+        color: $well-done;
+
+        @include media-breakpoint-up(lg) {
+          font-size: 1.25rem;
+        }
+      }
+
+      & > p {
+        line-height: 130%;
+        margin-bottom: 0;
+      }
+    }
+
+    //Button Styling
+    &-button {
+      flex-basis: 100%;
+
+      @include media-breakpoint-up(lg) {
+        flex-basis: 0;
+        min-width: 193px;
+        justify-self: end;
+        align-self: center;
+        align-items: center;
+        justify-content: end;
+
+        & > button {
+          padding: 10px 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

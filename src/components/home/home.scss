@@ -212,7 +212,7 @@
         @include media-breakpoint-up(xl) {
           width: 344px;
         }
-        & > img {
+        & > span > img {
           height: 177px;
           width: 100%;
           @include media-breakpoint-up(xl) {

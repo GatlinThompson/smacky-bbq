@@ -14,6 +14,7 @@ const MenuItem = (props) => {
   useEffect(() => {
     // Dynamically import the image
     import(
+      /* @vite-ignore */
       `../../assets/${props.item.title.toLowerCase().replace(/\s/g, "_")}.png`
     )
       .then((module) => {

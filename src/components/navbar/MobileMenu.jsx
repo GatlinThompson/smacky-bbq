@@ -13,7 +13,7 @@ const MobileMenu = (props) => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/" onClick={props.closeNav}>
+          <NavLink to="/rewards" onClick={props.closeNav}>
             Rewards
           </NavLink>
         </li>
@@ -28,7 +28,7 @@ const MobileMenu = (props) => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/" onClick={props.closeNav}>
+          <NavLink to="/login" onClick={props.closeNav}>
             Login/Signup
           </NavLink>
         </li>

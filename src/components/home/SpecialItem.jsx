@@ -22,7 +22,11 @@ const SpecialItem = (props) => {
   return (
     <li>
       <div className="mx-auto">
-        <LazyLoadImage src={imageSrc} alt={`Image of ${props.item.title}`} />
+        <LazyLoadImage
+          src={imageSrc}
+          alt={`Image of ${props.item.title}`}
+          effect="blur"
+        />
       </div>
       <div className="mx-auto">
         <p className="header text-center special-title">{props.item.title}</p>

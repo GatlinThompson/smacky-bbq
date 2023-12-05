@@ -12,6 +12,7 @@ const Modals = (props) => {
   const startOrdering = () => {
     userCtx.startOrder(true);
     props.closeModal();
+    console.log(userCtx);
   };
 
   return (
@@ -40,6 +41,7 @@ const Modals = (props) => {
             title={"Proceed to Checkout"}
             addClass={"checkout-modal-btn col-12"}
             location={"/checkout"}
+            onClick={startOrdering}
           />
         </div>
       </Modal.Body>

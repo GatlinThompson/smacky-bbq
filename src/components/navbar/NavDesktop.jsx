@@ -1,9 +1,6 @@
 import logo from "../../assets/logo-bottom.svg";
 import { NavLink } from "react-router-dom";
 import FancyButton from "../../elements/FancyButton";
-import { cart } from "../../store/cart";
-import { useContext, useEffect, useState } from "react";
-import UserContext from "../../store/user-context";
 import Bag from "../../assets/bag_with_item.svg";
 
 const NavDesktop = (props) => {
@@ -36,7 +33,7 @@ const NavDesktop = (props) => {
             <NavLink to="/">About Us</NavLink>
           </li>
           <li>
-            <NavLink to="/">Login/Signup</NavLink>
+            <NavLink to="/login">Login/Signup</NavLink>
           </li>
         </div>
         <li className="desktop-button">

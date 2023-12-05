@@ -10,7 +10,8 @@
   &:hover {
     background-color: darken($color: $steak-dark-red, $amount: 10%);
   }
-  & > a {
+  & > a,
+  & > span {
     color: $white;
     text-decoration: none;
     font-weight: bold;
@@ -41,4 +42,20 @@
 .cart-btn {
   margin-top: 0.75rem;
   padding: 0.25rem 0.4rem;
+}
+
+.rewards-button {
+  padding: 9px 27px;
+
+  & > a {
+    font-size: 1.25rem;
+  }
+}
+
+.login-button {
+  padding: 14px 50px;
+
+  & > span {
+    font-size: 1.5rem;
+  }
 }
