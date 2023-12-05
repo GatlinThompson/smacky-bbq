@@ -5,7 +5,7 @@ const RewardItem = (props) => {
   const [imageSrc, setImageSrc] = useState(null);
   useEffect(() => {
     // Dynamically import the image
-    import(/* @vite-ignore */ props.image)
+    import(props.image)
       .then((module) => {
         // Once the image is imported, update the state to trigger a re-render
         setImageSrc(module.default);
