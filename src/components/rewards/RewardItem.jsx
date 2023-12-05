@@ -1,17 +1,17 @@
 import Button from "../../elements/Button";
 import { useEffect, useState } from "react";
-import image from "../../assets/rewards_1.png";
+
 const RewardItem = (props) => {
   const [imageSrc, setImageSrc] = useState(null);
   useEffect(() => {
     // Dynamically import the image
-    import(props.image)
-      .then((module) => {
+    import(`../${props.image}`)
+      .then((response) => {
         // Once the image is imported, update the state to trigger a re-render
-        setImageSrc(module.default);
+        setImageSrc(response.default);
       })
       .catch((error) => {
-        console.error("Error loading image:", error);
+        console.error(error);
       });
   }, []);
   return (

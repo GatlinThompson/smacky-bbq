@@ -13,7 +13,6 @@ const LocationSearch = (props) => {
     const value = event.target.value;
     setQuery(value);
     props.setLocation(event.target.value);
-    userCtx.updateAddress(event.target.value);
 
     //Toggle CORS off for full effect otherwise wishful thinking.
     //Good chrome extension
