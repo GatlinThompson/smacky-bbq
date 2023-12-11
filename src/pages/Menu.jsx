@@ -3,6 +3,7 @@ import Menu from "../components/menu/Menu";
 import { useEffect, useContext } from "react";
 import UserContext from "../store/user-context";
 import { useNavigate } from "react-router-dom";
+import { redirect } from "react-router-dom";
 
 const MenuPage = () => {
   const userCtx = useContext(UserContext);
@@ -11,7 +12,7 @@ const MenuPage = () => {
   useEffect(() => {
     document.title = "Smacky's | Menu";
     if (userCtx.order) {
-      navigate("order");
+      navigate("/order");
     }
   }, []);
 
