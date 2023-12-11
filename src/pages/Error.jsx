@@ -11,6 +11,12 @@ import Button from "../elements/Button";
 const ErrorPage = () => {
   const [showCanvas, setShowCanvas] = useState(false);
   const [stage, setStage] = useState("");
+
+  useEffect(() => {
+    document.title = "Smacky's | Page Not Found";
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
+
   const showCartCanvas = () => {
     setShowCanvas(true);
     setStage("cart");
@@ -19,10 +25,6 @@ const ErrorPage = () => {
   const hideCanvas = () => setShowCanvas(false);
   return (
     <>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Smacky's | Error</title>
-      </Helmet>
       <NavBar showCartCanvas={showCartCanvas} />
       <main className="container-xxl">
         <Header title={"Page not found"} addClass={"page-header"} />

@@ -18,12 +18,12 @@ const MobileMenu = (props) => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/" onClick={props.closeNav}>
+          <NavLink to="/locations" onClick={props.closeNav}>
             Locations
           </NavLink>
         </li>
         <li>
-          <NavLink to="/" onClick={props.closeNav}>
+          <NavLink to="/about" onClick={props.closeNav}>
             About Us
           </NavLink>
         </li>

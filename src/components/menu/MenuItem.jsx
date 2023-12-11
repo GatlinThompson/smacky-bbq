@@ -37,7 +37,9 @@ const MenuItem = (props) => {
       </div>
 
       <div className="menu-item-price-head">
-        <h3 className="menu-item-header header">{props.item.title}</h3>
+        <h3 className="menu-item-header header text-center text-lg-start">
+          {props.item.title}
+        </h3>
         <div className="menu-item-price header">
           <p className={props.item.special ? "special" : ""}>
             <span className={props.item.special ? "price" : ""}>

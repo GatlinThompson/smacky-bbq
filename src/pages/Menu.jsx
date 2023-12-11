@@ -3,13 +3,13 @@ import Menu from "../components/menu/Menu";
 import { useEffect, useContext } from "react";
 import UserContext from "../store/user-context";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
 
 const MenuPage = () => {
   const userCtx = useContext(UserContext);
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = "Smacky's | Menu";
     if (userCtx.order) {
       navigate("order");
     }
@@ -20,10 +20,6 @@ const MenuPage = () => {
   }, []);
   return (
     <>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Smacky's | Menu</title>
-      </Helmet>
       <main>
         <Header title={"Menu"} addClass={"page-header"} />
         <Menu />

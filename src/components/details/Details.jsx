@@ -45,6 +45,10 @@ const Details = (props) => {
     setShowCanvas(false);
   };
 
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <>
       <div className="details-back">
@@ -114,7 +118,7 @@ const Details = (props) => {
         detailsPage={true}
         itemId={props.itemId}
       />
-      <Modal show={show} selectedItem={selectedItem} />
+      <Modal show={show} selectedItem={selectedItem} closeModal={closeModal} />
     </>
   );
 };

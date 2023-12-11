@@ -1,6 +1,11 @@
 //Login Form Styling
-.login-form {
-  margin-top: 3rem;
+.login-form,
+.sign-up-form {
+  margin-top: 2rem;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 0;
+  }
 
   & > form {
     & > div:not(.remember-password) {
@@ -19,6 +24,18 @@
         }
       }
     }
+  }
+}
+
+.sign-up-form {
+  @include media-breakpoint-up(lg) {
+    margin-top: 4rem;
+  }
+}
+
+.login-container {
+  @include media-breakpoint-up(lg) {
+    margin-top: 4rem;
   }
 }
 
@@ -70,11 +87,70 @@
 
 //OR Styling
 .or {
-  margin-top: 2.5rem;
-  font-size: 2.5rem;
+  margin-top: 1.5rem;
+  font-size: 2rem;
   color: $dark-blue;
 
   & > p {
     margin: 0;
+  }
+}
+
+//Sign up Styling
+.sign-up {
+  @include media-breakpoint-up(lg) {
+  }
+  & > div > h2 {
+    margin-top: 2.5rem;
+    color: $well-done;
+    font-size: 2rem;
+    @include media-breakpoint-up(lg) {
+      margin-top: 2rem;
+    }
+  }
+  & > div > p {
+    line-height: 106%;
+    max-width: 335px;
+    margin-top: -0.3rem;
+    margin-bottom: 0;
+  }
+}
+
+//Perk List Styling
+.perk-list {
+  margin-top: 2rem;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 2.5rem;
+  }
+
+  & > ul {
+    margin-top: 30px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 14px;
+    list-style-image: url("src/assets/list-icon.png");
+
+    & > li::marker {
+      list-style-image: url("../../assets/arrow_back.png");
+    }
+  }
+}
+
+//sign up form styling
+.contact-info,
+.personal-info {
+  & > div.input-without {
+    margin-top: 1rem;
+  }
+}
+
+hr.form-section {
+  margin-top: 39px;
+  border-top: 3px solid $well-done;
+  opacity: 1;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 5rem;
   }
 }

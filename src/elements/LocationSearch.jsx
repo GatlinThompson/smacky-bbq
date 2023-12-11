@@ -52,12 +52,14 @@ const LocationSearch = (props) => {
         <label htmlFor={"address"}>Address</label>
         <div>
           <input
+            id="address"
             type="text"
             value={query}
             onChange={changeHandler}
             onBlur={closeLocations}
             onFocus={openLocations}
-            placeholder="Enter a Location"
+            placeholder="Enter your Address"
+            name="address"
           />
           <button type="submit">
             <i className={`bi bi-geo-alt  icon-smaller`} />

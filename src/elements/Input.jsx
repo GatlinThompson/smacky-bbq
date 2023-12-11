@@ -1,17 +1,34 @@
 const Input = (props) => {
   return (
-    <div className="input-without">
+    <div className={`input-without ${props.addClass ? props.addClass : ""}`}>
       {props.title && (
         <label htmlFor={props.title.toLowerCase()}>{props.title}</label>
       )}
-      <div>
-        <input
-          type={props.type}
-          name={props.title}
-          placeholder={props.placeholder}
-          onChange={props.onChange}
-        />
-      </div>
+      {!props.textarea && (
+        <div>
+          <input
+            type={props.type}
+            name={props.title}
+            placeholder={props.placeholder}
+            onChange={props.onChange}
+            id={props.title.toLowerCase()}
+            value={props.value}
+          />
+        </div>
+      )}
+      {props.textarea && (
+        <div className="input-textarea">
+          <textarea
+            type={props.type}
+            name={props.title}
+            placeholder={props.placeholder}
+            onChange={props.onChange}
+            id={props.id}
+            rows={props.rows}
+            value={props.value}
+          />
+        </div>
+      )}
     </div>
   );
 };

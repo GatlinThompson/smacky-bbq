@@ -138,6 +138,7 @@ const Customization = (props) => {
             title={"Add to Cart"}
             addClass={"customize-button"}
             onClick={props.showModal}
+            type="submit"
           />
         </div>
       </section>

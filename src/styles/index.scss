@@ -17,6 +17,8 @@
 @import "../components/details/customize.scss";
 @import "../components/rewards/rewards.scss";
 @import "../components/login/login.scss";
+@import "../components/about/about.scss";
+@import "../components/location/locations.scss";
 
 //Elements
 @import "../elements/FancyButton.scss";
@@ -40,6 +42,7 @@ body {
   background-color: $background;
   font-family: "Raleway", sans-serif;
   color: #4e4b4b;
+  line-height: normal;
 }
 
 //Error Page Styling

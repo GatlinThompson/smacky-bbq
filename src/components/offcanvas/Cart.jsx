@@ -21,14 +21,13 @@ const Cart = (props) => {
               onClick={props.onClick}
             />
           </div>
-          <div className="text-center">
+          <div className="text-center mt-5">
             <FancyButton
               title={"Proceed to Checkout"}
-              margin={"3rem 2rem 0"}
-              padding={"6px"}
               fontSize={"2rem"}
               location={"/checkout"}
               onClick={props.onClick}
+              addClass={"cart-button"}
             />
           </div>
         </div>

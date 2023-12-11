@@ -15,7 +15,7 @@ const NavDesktop = (props) => {
             <NavLink to="rewards">Rewards</NavLink>
           </li>
           <li>
-            <NavLink to="/">Locations</NavLink>
+            <NavLink to="/locations">Locations</NavLink>
           </li>
 
           <li className="nav-brand">
@@ -30,7 +30,7 @@ const NavDesktop = (props) => {
           </li>
 
           <li>
-            <NavLink to="/">About Us</NavLink>
+            <NavLink to="/about">About Us</NavLink>
           </li>
           <li>
             <NavLink to="/login">Login/Signup</NavLink>
@@ -41,7 +41,7 @@ const NavDesktop = (props) => {
             <FancyButton
               location={"menu"}
               title={"Start Order"}
-              padding={"0 1rem"}
+              addClass={"navbtn"}
             />
           )}
 

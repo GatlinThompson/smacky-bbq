@@ -9,10 +9,9 @@ const Modals = (props) => {
   const userCtx = useContext(UserContext);
   const [show, setShow] = useState(false);
 
-  const startOrdering = () => {
+  const startOrdering = (e) => {
     userCtx.startOrder(true);
     props.closeModal();
-    console.log(userCtx);
   };
 
   return (

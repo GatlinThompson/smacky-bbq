@@ -13,10 +13,12 @@ import CustomizePage from "./pages/Customize";
 import OrderPage from "./pages/Order";
 import UserProvider from "./store/UserProvider";
 import RewardsPage from "./pages/Rewards";
-import { Helmet } from "react-helmet";
 import CheckoutPage from "./pages/Checkout";
 import LoginPage from "./pages/Login";
 import ErrorPage from "./pages/Error";
+import SignUpPage from "./pages/SignUp";
+import AboutPage from "./pages/About";
+import LocationPage from "./pages/Location";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,9 @@ const router = createBrowserRouter([
       { path: "rewards", element: <RewardsPage /> },
       { path: "checkout", element: <CheckoutPage /> },
       { path: "login", element: <LoginPage /> },
+      { path: "signup", element: <SignUpPage /> },
+      { path: "about", element: <AboutPage /> },
+      { path: "locations", element: <LocationPage /> },
     ],
   },
 ]);
@@ -40,13 +45,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Smacky's | Home</title>
-      </Helmet>
       <UserProvider>
         <RouterProvider router={router} />
-      </UserProvider>{" "}
+      </UserProvider>
     </>
   );
 }
