@@ -64,7 +64,7 @@ const SignUp = () => {
             />
             <Input
               title={"Birthday"}
-              addClass={"col-3 col-lg-2 mt-3 mt-lg-0 ms-lg-5"}
+              addClass={"col-3  mt-3 mt-lg-0 ms-lg-5 col-lg-3"}
               placeholder={"MM/DD"}
               type={"number"}
             />

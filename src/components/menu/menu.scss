@@ -217,6 +217,11 @@
       color: $dark-blue;
       font-weight: bold;
       text-decoration: none;
+      transition: all 100ms ease;
+
+      &:hover {
+        color: $steak-dark-red;
+      }
     }
   }
 }

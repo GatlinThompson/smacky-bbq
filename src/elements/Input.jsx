@@ -1,6 +1,9 @@
 const Input = (props) => {
   return (
-    <div className={`input-without ${props.addClass ? props.addClass : ""}`}>
+    <div
+      className={`input-without ${props.addClass ? props.addClass : ""}`}
+      style={{ width: props.width }}
+    >
       {props.title && (
         <label htmlFor={props.title.toLowerCase()}>{props.title}</label>
       )}
