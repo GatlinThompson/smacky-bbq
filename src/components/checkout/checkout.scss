@@ -1,0 +1,9 @@
+.address-text {
+  margin-top: 30px;
+  color: $dark-blue;
+  font-size: 2rem;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 3rem;
+  }
+}

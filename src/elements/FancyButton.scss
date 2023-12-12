@@ -150,4 +150,24 @@
       width: 100%;
     }
   }
+
+  &.special-button {
+    padding: 1rem 0 !important ;
+
+    & > a {
+      padding: 1rem 40px;
+    }
+  }
+
+  &.place-order-button {
+    margin-top: calc(43px - 16px);
+    width: 100%;
+    max-width: 406px;
+    padding: 1rem 39px;
+    font-size: 40px;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: calc(98px - 16px);
+    }
+  }
 }

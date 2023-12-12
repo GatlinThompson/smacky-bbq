@@ -39,6 +39,7 @@ const SpecialItem = (props) => {
             title={"See Special"}
             padding={"1rem 2.5rem"}
             fontsize={"2rem"}
+            addClass={"special-button"}
           />
         </div>
       </div>

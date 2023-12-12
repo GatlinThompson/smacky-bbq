@@ -143,6 +143,16 @@
   & > div.input-without {
     margin-top: 1rem;
   }
+
+  &.payment-info {
+    & > div {
+      margin-top: 1.5rem;
+
+      @include media-breakpoint-up(lg) {
+        margin-top: 3rem;
+      }
+    }
+  }
 }
 
 hr.form-section {

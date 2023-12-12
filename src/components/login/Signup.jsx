@@ -8,8 +8,6 @@ import { useNavigate } from "react-router-dom";
 const SignUp = () => {
   const navigate = useNavigate();
 
-  const [birthday, setBirthday] = useState("");
-
   const showPassword = () => {
     const password = document.getElementById("password");
     if (password.type === "password") {
