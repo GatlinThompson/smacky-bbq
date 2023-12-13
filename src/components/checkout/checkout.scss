@@ -7,3 +7,173 @@
     margin-top: 3rem;
   }
 }
+
+.checkout {
+  &-item {
+    display: flex;
+    justify-content: stretch;
+    gap: 13px;
+  }
+
+  &-content {
+    flex: 1;
+  }
+  &-image {
+    width: 123px;
+    height: 73px;
+
+    & > img {
+      width: 100%;
+      height: auto;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+        0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      border-radius: 0.1875rem;
+    }
+  }
+
+  &-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+
+    & > p {
+      font-size: 1.25rem;
+      margin-bottom: 0;
+    }
+
+    & > i {
+      color: $steak-dark-red;
+      font-size: 1.5rem;
+      line-height: 0;
+    }
+  }
+
+  &-price {
+    margin-top: -0.25rem;
+    color: $steak-dark-red;
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  &-qty {
+    display: flex;
+    align-items: center;
+
+    & > p {
+      font-size: 1.25rem;
+    }
+
+    & > span {
+      background-color: $white;
+      color: $steak-dark-red;
+      border: 1px solid $dark-gray;
+      border-radius: 2px;
+      font-size: 1.5rem;
+      padding: 3px 11px;
+      margin-left: 6px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      line-height: normal;
+    }
+  }
+}
+
+.cart-checkout {
+  margin-top: 28px;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: 82px;
+  }
+}
+
+div.checkout-discount {
+  h2 {
+    color: $well-done;
+    font-size: 1.25rem;
+
+    & > span {
+      color: $dark-gray;
+      margin-left: 10px;
+      font-family: "Raleway", sans-serif;
+    }
+  }
+}
+
+.checkout-total-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: calc(9px - 8px);
+
+  & > h2 {
+    font-size: 40px;
+    color: $well-done;
+    margin-bottom: 0;
+  }
+
+  & > p {
+    font-size: 36px;
+    color: $steak-dark-red;
+    margin-bottom: 0;
+  }
+}
+
+.cart-list {
+  min-height: 45vh;
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1;
+
+  @include media-breakpoint-up(lg) {
+  }
+}
+
+.cart-checkout {
+  display: flex;
+  flex-flow: column nowrap;
+
+  justify-content: space-between;
+
+  @include media-breakpoint-up(lg) {
+    flex-flow: row;
+    gap: 30px;
+  }
+}
+
+div.total {
+  align-self: center;
+}
+
+.checkout-item.checkout-true {
+  @include media-breakpoint-up(lg) {
+    gap: 2rem;
+    & > div.checkout-image {
+      width: 187px;
+      height: 112px;
+    }
+
+    & > div.checkout-content {
+      & > div.checkout-title {
+        & > p {
+          color: $well-done;
+          font-size: 2rem;
+          font-family: "Angkor", serif;
+        }
+
+        & > i {
+          font-size: 1.75rem;
+        }
+      }
+
+      & > p.checkout-price {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+.checkout-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

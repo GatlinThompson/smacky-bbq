@@ -1,6 +1,6 @@
 import Button from "../../elements/Button";
 import FancyButton from "../../elements/FancyButton";
-import CartItem from "./CartItem";
+import CartItem from "../checkout/CartItem";
 
 const Cart = (props) => {
   const handleStage = () => {
@@ -8,8 +8,8 @@ const Cart = (props) => {
   };
   return (
     <div className="cart">
-      <div className="cart-purchases">
-        <CartItem />
+      <div className="cart-purchases mt-4">
+        <CartItem id={4} />
       </div>
       <div className="cart-total">
         <div className="cart-discount">

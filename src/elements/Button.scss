@@ -16,7 +16,8 @@
     text-decoration: none;
     font-weight: bold;
     padding: 0.8rem 1.5rem;
-
+    width: 100%;
+    min-width: 100%;
     @include media-breakpoint-up(xl) {
       font-size: 1.125rem;
     }
@@ -41,10 +42,12 @@
 
 .add-more-modal-btn {
   font-size: 1.25rem;
-  padding: 1rem 0;
+  padding: 0;
+  display: flex;
+
   & > a {
     width: 100%;
-    padding: 1rem 0.875rem;
+    padding: 1rem auto;
   }
 }
 
@@ -88,5 +91,23 @@
   & > a {
     padding: 14px 2rem;
     font-size: 1.5rem;
+    width: 100%;
+  }
+}
+
+.checkout-add-more {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 0;
+  margin-bottom: -0.5rem;
+  & > a {
+    font-size: 1.5rem;
+    padding: 14px 41px;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 28px;
+      padding: 16px 41px;
+    }
   }
 }
