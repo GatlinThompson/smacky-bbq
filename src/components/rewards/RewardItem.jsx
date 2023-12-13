@@ -19,7 +19,7 @@ const RewardItem = (props) => {
   return (
     <div className="reward-item col-12 col-lg-9 mx-auto">
       <div className="reward-item-img">
-        <img src={imageSrc} />
+        <img src={imageSrc} alt={props.alt} />
       </div>
       <div className="reward-item-content">
         <h2 className="header">{props.title}</h2>
