@@ -1,6 +1,7 @@
 import Button from "../../elements/Button";
 import LocationItem from "./LocationItem";
 import map from "../../assets/map.webp";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const locations = [
   {
@@ -46,7 +47,11 @@ const LocationMap = (props) => {
         </div>
         <div className="map-item d-none d-lg-block">
           <div>
-            <img src={map} alt="map to locate resturant locations" />
+            <LazyLoadImage
+              src={map}
+              alt="map to locate resturant locations"
+              effect="blur"
+            />
           </div>
         </div>
       </section>

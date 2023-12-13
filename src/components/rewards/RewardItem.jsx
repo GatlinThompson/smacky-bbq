@@ -1,3 +1,4 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import Button from "../../elements/Button";
 import { useEffect, useState } from "react";
 
@@ -19,7 +20,7 @@ const RewardItem = (props) => {
   return (
     <div className="reward-item col-12 col-lg-9 mx-auto">
       <div className="reward-item-img">
-        <img src={imageSrc} alt={props.alt} />
+        <LazyLoadImage src={imageSrc} alt={props.alt} effect="blur" />
       </div>
       <div className="reward-item-content">
         <h2 className="header">{props.title}</h2>

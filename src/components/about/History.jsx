@@ -1,12 +1,14 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import storeImage from "../../assets/first_store.webp";
 
 const History = () => {
   return (
     <section className="history col-12 d-flex flex-column flex-lg-row row">
       <div className="history-image col-11 mx-auto col-lg-7 mx-lg-0 order-1">
-        <img
+        <LazyLoadImage
           src={storeImage}
           alt="first store location located in the heart of the city"
+          effect="blur"
         />
       </div>
       <p className="col-11 mx-auto col-lg-12 mb-0 order-2 order-lg-3">
