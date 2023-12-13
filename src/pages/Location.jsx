@@ -11,7 +11,6 @@ const LocationPage = () => {
   }, []);
 
   const chooseLocation = (location) => {
-    console.log(location);
     setMyLocation(location);
   };
 

@@ -18,7 +18,6 @@ const FindLocation = (props) => {
   };
 
   const useMyLocation = () => {
-    console.log(userCtx);
     props.chooseLocation(userCtx.address);
   };
 

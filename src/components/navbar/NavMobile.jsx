@@ -32,7 +32,6 @@ const NavMobile = (props) => {
         clearTimeout(timer);
       }, 250);
     }
-    console.log(toggleNav);
   };
 
   const closeNav = () => {

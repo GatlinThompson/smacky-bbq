@@ -53,7 +53,7 @@
   &-purchases {
     flex: auto;
   }
-  &-total:not(.checkout) {
+  &-total {
     border-top: 3px solid $well-done;
     padding-top: 0.75rem;
     display: flex;
