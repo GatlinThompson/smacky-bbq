@@ -15,7 +15,7 @@ const Payment = () => {
           <Input title="Name on Card" addClass={"col-12"} />
           <Input
             title="Card Number"
-            addClass={"col-11 letter-spacing col-lg-9"}
+            addClass={"col-11 letter-spacing col-lg-9 card-number"}
             placeholder={"____ - ____ - ____ - ____"}
           />
           <div className="mt-3 mt-lg-5 d-flex flex-row">
@@ -23,7 +23,7 @@ const Payment = () => {
 
             <Input
               title={"Exp. Date"}
-              addClass={"col-3 ms-4"}
+              addClass={"exp-date ms-4"}
               placeholder={"MM/DD"}
               type={"number"}
             />

@@ -6,6 +6,7 @@ const menu = [
     type: "Meats",
     special: false,
     price: 17.88,
+    alt: "Delicious smoked brisket chopped and served on a white plate.",
   },
   {
     id: 1,
@@ -15,6 +16,7 @@ const menu = [
     special: true,
     price: 9.88,
     specialPrice: 7.5,
+    alt: "Plain hamburger with onions, tomatoe, and lettuce.",
   },
   {
     id: 2,
@@ -24,6 +26,7 @@ const menu = [
     special: true,
     price: 15.99,
     specialPrice: 11.5,
+    alt: "Big meaty burger with two beef pattys with bacon and cheese.",
   },
   {
     id: 3,
@@ -33,6 +36,7 @@ const menu = [
     special: true,
     price: 15.99,
     specialPrice: 11.5,
+    alt: "Pretzel bun burger  with cheese and lettuce for toppings",
   },
   {
     id: 5,
@@ -41,6 +45,7 @@ const menu = [
     type: "Meats",
     special: false,
     price: 19.98,
+    alt: "Smoked spare ribs with charred edges server with red and orange dipping sauce.",
   },
   {
     id: 6,
@@ -49,6 +54,7 @@ const menu = [
     type: "Meats",
     special: false,
     price: 22.88,
+    alt: "Baby back ribs slow cooked to prefect browning served ontop of a plate.",
   },
   {
     id: 7,
@@ -57,6 +63,7 @@ const menu = [
     type: "Wings",
     special: false,
     price: 9.98,
+    alt: "Fire hot orange chicken wings with classic red hot sauce smothered all of the dish.",
   },
   {
     id: 8,
@@ -65,6 +72,7 @@ const menu = [
     type: "Wings",
     special: false,
     price: 15.99,
+    alt: "fried chicken wings served with smalled red pepper ontop of a green mat.",
   },
   {
     id: 9,
@@ -73,6 +81,7 @@ const menu = [
     type: "Sandwiches",
     special: false,
     price: 9.88,
+    alt: "Pulled chicken sandwich with lettuce and mayo and buttered bun.",
   },
   {
     id: 10,
@@ -81,6 +90,7 @@ const menu = [
     type: "Sandwiches",
     special: false,
     price: 11.99,
+    alt: "Classic pull pork sandwich with the meat looking dry.",
   },
   {
     id: 11,
@@ -89,6 +99,7 @@ const menu = [
     type: "Sides",
     special: false,
     price: 4.59,
+    alt: "Cheesy mac and cheese served in a small white bowl.",
   },
   {
     id: 12,
@@ -97,6 +108,7 @@ const menu = [
     type: "Sides",
     special: false,
     price: 3.99,
+    alt: "Corn bread down shaped into buttery rolls.",
   },
   {
     id: 13,
@@ -105,6 +117,7 @@ const menu = [
     type: "Sides",
     special: false,
     price: 4.99,
+    alt: "Warm baked beans smoking in a black pot",
   },
 ];
 

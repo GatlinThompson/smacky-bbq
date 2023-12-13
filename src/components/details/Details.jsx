@@ -65,6 +65,7 @@ const Details = (props) => {
           <LazyLoadImage
             src={imageSrc}
             className={`${item[0].type.toLowerCase()} img-fluid`}
+            alt={item[0].alt}
             effect="blur"
           />
         </div>

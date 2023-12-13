@@ -6,6 +6,32 @@
     margin-bottom: -0.2rem;
   }
 
+  &.exp-date {
+    & > div {
+      width: 79px;
+
+      @include media-breakpoint-up(lg) {
+        width: 89px;
+      }
+    }
+  }
+
+  &.card-number {
+    & > div {
+      max-width: 330px;
+    }
+  }
+
+  &.phone-number {
+    & > div {
+      max-width: 275px;
+
+      @include media-breakpoint-up(lg) {
+        max-width: 280px;
+      }
+    }
+  }
+
   & > div {
     display: flex;
     width: 100%;
@@ -67,4 +93,8 @@ div.input-textarea {
       min-height: 315px;
     }
   }
+}
+
+input.exp.date {
+  max-width: 10px !important;
 }

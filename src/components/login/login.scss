@@ -129,11 +129,7 @@
     display: flex;
     flex-flow: column nowrap;
     gap: 14px;
-    list-style-image: url("src/assets/list-icon.png");
-
-    & > li::marker {
-      list-style-image: url("../../assets/arrow_back.png");
-    }
+    list-style-image: url("./src/assets/list-icon.png");
   }
 }
 

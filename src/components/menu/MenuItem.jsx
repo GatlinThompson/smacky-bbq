@@ -30,12 +30,11 @@ const MenuItem = (props) => {
       <div className="menu-item-img mx-auto">
         <LazyLoadImage
           src={imageSrc}
-          alt={`Image of ${props.item.title}`}
+          alt={props.item.alt}
           effect="blur"
           className={`${props.item.type.toLowerCase()}`}
         />
       </div>
-
       <div className="menu-item-price-head">
         <h3 className="menu-item-header header text-center text-lg-start">
           {props.item.title}

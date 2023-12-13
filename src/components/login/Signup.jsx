@@ -50,7 +50,7 @@ const SignUp = () => {
         <div className="personal-info">
           <Input
             title={"Phone Number"}
-            addClass={"col-10 letter-spacing col-lg-6"}
+            addClass={"letter-spacing phone-number"}
             placeholder={"(_ _ _) - _ _ _ - _ _ _ _"}
           />
           <Input title={"Street Address"} />
@@ -62,7 +62,7 @@ const SignUp = () => {
             />
             <Input
               title={"Birthday"}
-              addClass={"col-3  mt-3 mt-lg-0 ms-lg-5 col-lg-3"}
+              addClass={"exp-date  mt-3 mt-lg-0 ms-lg-5 "}
               placeholder={"MM/DD"}
               type={"number"}
             />
