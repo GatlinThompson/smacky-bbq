@@ -5,7 +5,7 @@ const Cart = () => {
   return (
     <section className="cart-checkout">
       <div className="cart-list">
-        <CartItem id={4} addClass={"checkout-true"} />
+        <CartItem id={4} addClass={"checkout-true"} checkout={true} />
       </div>
 
       <div className="total">

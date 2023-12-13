@@ -42,15 +42,28 @@ const CartItem = (props) => {
               <p className="mb-0">Quanity:</p>
               <span>1</span>
             </div>
-            <div className="checkout-button  d-none d-md-block">
-              <Button title="Customize Meal" />
-            </div>
+            {props.checkout && (
+              <div className="checkout-button  d-none d-md-block">
+                <Button
+                  title="Customize Meal"
+                  location={`/customize/${props.id}`}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
-      <div className="checkout-button col-12 text-center mt-3 d-block d-md-none">
-        <Button title="Customize Meal" />
-      </div>
+
+      {props.checkout && (
+        <div className="checkout-button col-12 text-center mt-3 d-block d-md-none">
+          <Button title="Customize Meal" />
+        </div>
+      )}
+      {!props.checkout && (
+        <div className="checkout-button col-12 text-center mt-3 ">
+          <Button title="Customize Meal" />
+        </div>
+      )}
     </div>
   );
 };
