@@ -65,7 +65,10 @@ const Modals = (props) => {
               <Button
                 title={"Return to Home"}
                 location={"/"}
-                onClick={closeOrder}
+                onClick={() => {
+                  closeOrder();
+                  if (props.onConfirm) props.onConfirm();
+                }}
                 addedClass={"add-more-modal-btn col-12"}
               />
             </div>

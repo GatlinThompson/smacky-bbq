@@ -1,9 +1,33 @@
+import { useContext } from "react";
 import FancyButton from "../../elements/FancyButton";
+import UserContext from "../../store/user-context";
 
 const Delivery = (props) => {
-  const handleStage = () => {
+  const userCtx = useContext(UserContext);
+
+  const handlePickup = () => {
+    userCtx.setDeliveryType("pickup");
+    // Add the item to cart if we have an itemId
+    if (props.itemId) {
+      userCtx.addToCart({ id: parseInt(props.itemId), quantity: 1 });
+    }
+    if (props.showModal) {
+      props.showModal();
+    }
+    if (props.hideCanvas) {
+      props.hideCanvas();
+    }
+  };
+
+  const handleDelivery = () => {
+    userCtx.setDeliveryType("delivery");
+    // Add the item to cart if we have an itemId
+    if (props.itemId) {
+      userCtx.addToCart({ id: parseInt(props.itemId), quantity: 1 });
+    }
     props.setStage("location");
   };
+
   return (
     <div className="delivery">
       <div>
@@ -16,7 +40,7 @@ const Delivery = (props) => {
           }
           addClass={"oc-buttons mx-auto"}
           fontsize={"1.75rem"}
-          onClick={handleStage}
+          onClick={handlePickup}
         />
       </div>
       <p className="text-center">OR</p>
@@ -30,7 +54,7 @@ const Delivery = (props) => {
           }
           addClass={"oc-buttons mx-auto"}
           fontsize={"1.75rem"}
-          onClick={handleStage}
+          onClick={handleDelivery}
         />
       </div>
     </div>

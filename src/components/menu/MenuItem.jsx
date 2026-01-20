@@ -1,14 +1,17 @@
 import Button from "../../elements/Button";
 import FancyButton from "../../elements/FancyButton";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
+import UserContext from "../../store/user-context";
 
 const MenuItem = (props) => {
+  const userCtx = useContext(UserContext);
   const [imageSrc, setImageSrc] = useState(null);
+  const hasItems = userCtx.cart.length > 0;
 
   const showCanvas = () => {
-    props.showCanvas(props.item.title);
+    props.showCanvas(props.item.id, props.item.title);
   };
 
   useEffect(() => {
@@ -58,36 +61,15 @@ const MenuItem = (props) => {
         <p>{props.item.desc}</p>
       </div>
       <div className="menu-item-extra text-center text-md-end">
-        {!props.order && (
-          <Button
-            title={"More Details"}
-            location={`/details/${props.item.id}`}
-          />
-        )}
-        {props.order && (
-          <Button
-            title={"Customize Meal"}
-            location={`/customize/${props.item.id}`}
-          />
-        )}
+        <Button title={"More Details"} location={`/details/${props.item.id}`} />
       </div>
       <div className="menu-item-order text-center text-md-start">
-        {!props.order && (
-          <FancyButton
-            title={"Start Order"}
-            fontsize={"1.75rem"}
-            padding={"4px 44.5px"}
-            onClick={showCanvas}
-          />
-        )}
-        {props.order && (
-          <FancyButton
-            title={"Add to Cart"}
-            fontsize={"1.75rem"}
-            padding={"4px 44.5px"}
-            onClick={showCanvas}
-          />
-        )}
+        <FancyButton
+          title={hasItems ? "Add to Cart" : "Start Order"}
+          fontsize={"1.75rem"}
+          padding={"4px 44.5px"}
+          onClick={showCanvas}
+        />
       </div>
     </li>
   );

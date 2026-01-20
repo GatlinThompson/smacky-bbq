@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../elements/Header";
 import Payment from "../components/checkout/Payment";
 import Address from "../components/checkout/Address";
@@ -7,14 +8,23 @@ import Modal from "../components/modal/Modal";
 import Cart from "../components/checkout/Cart";
 import Image from "../assets/arrow_back.png";
 import { Link } from "react-router-dom";
+import UserContext from "../store/user-context";
 
 const CheckoutPage = () => {
+  const userCtx = useContext(UserContext);
+  const navigate = useNavigate();
   const [show, setShowModal] = useState(false);
+  const hasItems = userCtx.cart.length > 0;
 
   useEffect(() => {
     document.title = "Smacky's | Checkout";
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  }, []);
+
+    // Redirect if cart is empty
+    if (!hasItems) {
+      navigate("/menu");
+    }
+  }, [hasItems, navigate]);
 
   const showModal = () => {
     setShowModal(true);
@@ -22,6 +32,14 @@ const CheckoutPage = () => {
 
   const closeModal = () => {
     setShowModal(false);
+  };
+
+  const handlePlaceOrder = () => {
+    // Clear the cart after order is placed
+    userCtx.clearCart();
+    setShowModal(false);
+    // Navigate to home or order confirmation
+    navigate("/");
   };
 
   return (
@@ -45,7 +63,12 @@ const CheckoutPage = () => {
           />
         </div>
       </main>
-      <Modal show={show} closeModal={closeModal} placeOrder={true} />
+      <Modal
+        show={show}
+        closeModal={closeModal}
+        placeOrder={true}
+        onConfirm={handlePlaceOrder}
+      />
     </>
   );
 };

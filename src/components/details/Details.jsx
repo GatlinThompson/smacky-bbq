@@ -1,21 +1,26 @@
 import { Link } from "react-router-dom";
 import menu from "../../store/menu";
 import Image from "../../assets/arrow_back.png";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import FancyButton from "../../elements/FancyButton";
 import Offcanvas from "../offcanvas/Offcanvas";
 import Button from "../../elements/Button";
 import Modal from "../modal/Modal";
 import Customization from "./Customization";
+import UserContext from "../../store/user-context";
+import { useNavigate } from "react-router-dom";
 
 const Details = (props) => {
+  const userCtx = useContext(UserContext);
+  const navigate = useNavigate();
   const item = menu.filter((meal) => meal.id == props.itemId);
   const [imageSrc, setImageSrc] = useState(null);
   const [showCanvas, setShowCanvas] = useState(false);
   const [stage, setStage] = useState("");
   const [show, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState("");
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     // Dynamically import the image
@@ -31,6 +36,16 @@ const Details = (props) => {
       });
   }, []);
 
+  const addToCartHandler = () => {
+    userCtx.addToCart({
+      id: item[0].id,
+      quantity: quantity,
+      customizations: null,
+    });
+    // Navigate to order page or show cart
+    navigate("/order");
+  };
+
   const showCanvasHandler = () => {
     setSelectedItem(item[0].title);
     setShowCanvas(true);
@@ -38,6 +53,10 @@ const Details = (props) => {
   };
 
   const hideCanvas = () => setShowCanvas(false);
+
+  const incrementQuantity = () => setQuantity((prev) => prev + 1);
+  const decrementQuantity = () =>
+    setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
   const showModal = () => {
     setSelectedItem(item[0].title);
@@ -92,13 +111,30 @@ const Details = (props) => {
         } d-block text-center`}
       >
         {!props.customize && (
-          <FancyButton
-            title={"Start Order"}
-            fontsize={"2rem"}
-            padding={"0.5rem 4rem"}
-            onClick={showCanvasHandler}
-            addClass={"details-button"}
-          />
+          <>
+            <div className="d-flex justify-content-center align-items-center gap-3 mb-3">
+              <button
+                onClick={decrementQuantity}
+                className="btn btn-outline-secondary px-3"
+              >
+                -
+              </button>
+              <span className="fs-4 fw-bold">{quantity}</span>
+              <button
+                onClick={incrementQuantity}
+                className="btn btn-outline-secondary px-3"
+              >
+                +
+              </button>
+            </div>
+            <FancyButton
+              title={"Add to Cart"}
+              fontsize={"2rem"}
+              padding={"0.5rem 4rem"}
+              onClick={addToCartHandler}
+              addClass={"details-button"}
+            />
+          </>
         )}
         <div>
           <Button

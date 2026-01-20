@@ -2,10 +2,14 @@ import { NavLink } from "react-router-dom";
 import hambugerMenu from "../../assets/navbar-toggle-icon.svg";
 import logo from "../../assets/logo-right.svg";
 import MobileMenu from "./MobileMenu";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Bag from "../../assets/bag_with_item.svg";
+import UserContext from "../../store/user-context";
 
 const NavMobile = (props) => {
+  const userCtx = useContext(UserContext);
+  const itemCount = userCtx.getCartItemCount();
+  const hasItems = itemCount > 0;
   const [toggleNav, setToggleNav] = useState(false);
   const [start, setStart] = useState("");
   const [growing, setGrowing] = useState("");
@@ -16,7 +20,7 @@ const NavMobile = (props) => {
       setGrowing("growing");
 
       const timer = setTimeout(() => {
-        if (props.order) {
+        if (hasItems) {
           setStart("start ordered");
         } else {
           setStart("start");
@@ -59,10 +63,10 @@ const NavMobile = (props) => {
         </NavLink>
 
         <div className="d-flex">
-          {props.order && (
+          {hasItems && (
             <button className="bag-icon me-1" onClick={props.showCartCanvas}>
               <img src={Bag} style={{ width: "27px", height: "29px" }} />
-              <span className="bag-number">1</span>
+              <span className="bag-number">{itemCount}</span>
             </button>
           )}
           <button className="nav-menu d-xl-none d-block" onClick={navBarToggle}>
@@ -75,7 +79,7 @@ const NavMobile = (props) => {
           growing={growing}
           start={start}
           closeNav={closeNav}
-          order={props.order}
+          order={hasItems}
         />
       )}
     </>

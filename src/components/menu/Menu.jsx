@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import menu from "../../store/menu";
 import MenuItem from "./MenuItem";
 import Offcanvas from "../offcanvas/Offcanvas";
@@ -6,8 +6,10 @@ import InputWithIcon from "../../elements/InputWithIcon";
 import MenuCatergories from "./MenuCatergories";
 import Modal from "../modal/Modal";
 import FancyButton from "../../elements/FancyButton";
+import UserContext from "../../store/user-context";
 
 const Menu = (props) => {
+  const userCtx = useContext(UserContext);
   //Intial setup
   const [menuFiltered, setMenu] = useState(menu);
   const [stage, setStage] = useState("");
@@ -15,6 +17,7 @@ const Menu = (props) => {
   const [show, setShowModal] = useState(false);
 
   const [selectedItem, setSelectedItem] = useState("");
+  const [selectedItemId, setSelectedItemId] = useState(null);
 
   //Gets unqiue values of catergories
   const [catergories, setCaterogries] = useState([
@@ -28,7 +31,7 @@ const Menu = (props) => {
     const filteredMenu = menu.filter(
       (item) =>
         item.title.toLowerCase().includes(event.target.value) ||
-        item.type.toLowerCase().includes(event.target.value)
+        item.type.toLowerCase().includes(event.target.value),
     );
 
     //Filters Caterogries based on filter menu
@@ -44,13 +47,19 @@ const Menu = (props) => {
     event.preventDefault();
   };
 
-  const showCanvasHandler = (item) => {
-    setSelectedItem(item);
-    if (!props.order) {
+  const showCanvasHandler = (itemId, itemTitle) => {
+    setSelectedItem(itemTitle);
+    setSelectedItemId(itemId);
+    const hasItems = userCtx.cart.length > 0;
+
+    if (!hasItems) {
+      // First item - show delivery/pickup selection
       setShowCanvas(true);
       setStage("delivery");
       return;
     }
+    // Already has items - add directly and show modal
+    userCtx.addToCart({ id: itemId, quantity: 1 });
     showModal();
   };
 
@@ -68,12 +77,7 @@ const Menu = (props) => {
   const specials = menuFiltered
     .filter((item) => item.special === true)
     .map((item) => (
-      <MenuItem
-        key={item.id}
-        item={item}
-        showCanvas={showCanvasHandler}
-        order={props.order}
-      />
+      <MenuItem key={item.id} item={item} showCanvas={showCanvasHandler} />
     ));
 
   return (
@@ -104,7 +108,6 @@ const Menu = (props) => {
                     key={item.id}
                     item={item}
                     showCanvas={showCanvasHandler}
-                    order={props.order}
                   />
                 ))}
             </ul>
@@ -128,6 +131,7 @@ const Menu = (props) => {
         hideCanvas={hideCanvas}
         showModal={showModal}
         stage={stage}
+        itemId={selectedItemId}
       />
 
       <Modal show={show} selectedItem={selectedItem} closeModal={closeModal} />

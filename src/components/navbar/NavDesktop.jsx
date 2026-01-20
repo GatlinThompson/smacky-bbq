@@ -2,8 +2,13 @@ import logo from "../../assets/logo-bottom.svg";
 import { NavLink } from "react-router-dom";
 import FancyButton from "../../elements/FancyButton";
 import Bag from "../../assets/bag_with_item.svg";
+import UserContext from "../../store/user-context";
+import { useContext } from "react";
 
 const NavDesktop = (props) => {
+  const userCtx = useContext(UserContext);
+  const itemCount = userCtx.getCartItemCount();
+  const hasItems = itemCount > 0;
   return (
     <>
       <ul className="nav-desktop d-none d-xl-flex">
@@ -37,7 +42,7 @@ const NavDesktop = (props) => {
           </li>
         </div>
         <li className="desktop-button">
-          {!props.order && (
+          {!hasItems && (
             <FancyButton
               location={"menu"}
               title={"Start Order"}
@@ -45,10 +50,10 @@ const NavDesktop = (props) => {
             />
           )}
 
-          {props.order && (
+          {hasItems && (
             <button className="bag-icon me-5" onClick={props.showCartCanvas}>
               <img src={Bag} style={{ width: "57px", height: "67px" }} />
-              <span className="bag-number">1</span>
+              <span className="bag-number">{itemCount}</span>
             </button>
           )}
         </li>

@@ -58,7 +58,14 @@ function Offcanvass(props) {
             itemId={props.itemId}
           />
         )}
-        {stage == "delivery" && <Delivery setStage={handleStage} />}
+        {stage == "delivery" && (
+          <Delivery
+            setStage={handleStage}
+            itemId={props.itemId}
+            showModal={props.showModal}
+            hideCanvas={handleClose}
+          />
+        )}
         {stage == "cart" && (
           <Cart setStage={handleStage} onClick={handleClose} />
         )}
