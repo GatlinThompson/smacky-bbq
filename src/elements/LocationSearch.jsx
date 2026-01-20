@@ -18,7 +18,7 @@ const LocationSearch = (props) => {
     //Good chrome extension
     axios
       .get(
-        `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${value}&key=AIzaSyDvnTtdpTq402kGwLhB3ivwChkLWB8v6yM`
+        `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${value}&key=AIzaSyDvnTtdpTq402kGwLhB3ivwChkLWB8v6yM`,
       )
       .then((response) => {
         setLocations(response.data.predictions.slice(0, 4));
@@ -49,7 +49,9 @@ const LocationSearch = (props) => {
   return (
     <>
       <div className="location-search">
-        <label htmlFor={"address"}>Address</label>
+        <label htmlFor={"address"} style={{ marginBottom: "0.25rem" }}>
+          Address
+        </label>
         <div>
           <input
             id="address"
